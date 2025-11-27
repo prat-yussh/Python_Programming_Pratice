@@ -6,6 +6,6 @@ hindi = {
     "daudo": "run"
 }
 
-word=input("Enter the word you want to know")
+word=input("Enter the word you want to know:")
 
 print(hindi[word])
