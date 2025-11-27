@@ -12,4 +12,13 @@ Dear <|Name|>,
 You are selected!
 <|Date|>
 '''
-print(letter)
+
+name=input("Enter your name:")
+date=input("Enter date:")
+
+name_output=letter.replace("<|Name|>",name)
+# var=name_output
+date_output=name_output.replace("<|Date|>",date)
+ 
+
+print(date_output)
