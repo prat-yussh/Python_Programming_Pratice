@@ -2,8 +2,21 @@
 
 database={}
 
-data=input("enter your fav subject")
-database=data
+name=input("enter your name:")
+subject=input("enter your fav subject:")
+
+database.update({name:subject})
+name=input("enter your name:")
+subject=input("enter your fav subject:")
+
+database.update({name:subject})
+name=input("enter your name:")
+subject=input("enter your fav subject:")
+
+database.update({name:subject})
+name=input("enter your name:")
+subject=input("enter your fav subject:")
+
+database.update({name:subject})
 
 print(database)
-print(type(database))
