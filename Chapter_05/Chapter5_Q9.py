@@ -6,3 +6,5 @@ s = {8, 7, 12, "Harry", [1,2]}
 s = {8, 7, 12, "Harry", [1,2]}
 
 print(s)
+
+# set is imutable so changeing the values inside a list is not possible
