@@ -15,15 +15,15 @@ sub3=int(input("Enter your marks:"))
 
 avg=(100*(sub1+sub2+sub3))/300
 
-if(avg>=90 or avg<=100):
+if(avg>=90 and avg<=100):
     print("His grade is:Ex")
-elif(avg>=80 or avg<=90):
+elif(avg>=80 and avg<=90):
     print("His grade is:A")
-elif(avg>=70 or avg<=80):
+elif(avg>=70 and avg<=80):
     print("His grade is:B")
-elif(avg>=60 or avg<=70):
+elif(avg>=60 and avg<=70):
     print("His grade is:C")
-elif(avg>=50 or avg<=60):
+elif(avg>=50 and avg<=60):
     print("His grade is:D")
 elif(avg<50):
     print("His grade is:F")
