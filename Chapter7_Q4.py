@@ -2,9 +2,7 @@
 
 num=int(input("Enter the number to check the number is prime or not:"))
 
-i=2
-
-for i in range(i,num):
+for i in range(2,num):
     if(num%i==0):
         print("the number is not prime.")
         break
