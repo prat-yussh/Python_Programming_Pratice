@@ -9,7 +9,8 @@ n=int(input("Enter a number:"))
 
 for i in range(1,n+1):
     print("*",end="")
-    for j in range(1):
+    for j in range(2):
         print("*")
-        print("")
+        if(i==2):
+        
     # print("*")
