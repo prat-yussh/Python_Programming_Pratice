@@ -11,5 +11,5 @@ def display(n):
     print("*"*n)
     display(n-1)
 
-n=int(input("Enter a number to find sum of n natural number:"))
+n=int(input("Enter a number:"))
 display(n)
