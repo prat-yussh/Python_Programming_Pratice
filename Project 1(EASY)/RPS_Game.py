@@ -8,25 +8,27 @@ choices={
 
 computer = random.choice([1,2,3])
 
-print("Choose only one!\nRock:1\nPaper:2\nScissor:3")
-user=int(input("Enter you choice:"))
+for i in range(1,4):
+    print("Choose only one!\nRock:1\nPaper:2\nScissor:3")
+    user=int(input("Enter you choice:"))
 
-if(computer==user):
-    print("Its a draw")
-else:
-    if(computer==1 and user==2):
-        print("You Win")
-    elif(computer==1 and user==3):
-        print("Computer Wins")
-    elif(computer==2 and user==1):
-        print("Computer Wins")
-    elif(computer==2 and user==3):
-        print("You Wins")
-    elif(computer==3 and user==1):
-        print("You Wins")
-    elif(computer==3 and user==2):
-        print("Computer Wins")
+
+    if(computer==user):
+        print("Its a draw")
     else:
-        print("Something Went Wrong")
+        if(computer==1 and user==2):
+            print("You Win")
+        elif(computer==1 and user==3):
+            print("Computer Wins")
+        elif(computer==2 and user==1):
+            print("Computer Wins")
+        elif(computer==2 and user==3):
+            print("You Wins")
+        elif(computer==3 and user==1):
+            print("You Wins")
+        elif(computer==3 and user==2):
+            print("Computer Wins")
+        else:
+            print("Something Went Wrong")
 
-print(f"Computr choice:{choices[computer]} USer Choice:{choices[user]}")    
+print(f"Computr choice:{choices[computer]}\nUSer Choice:{choices[user]}")    
