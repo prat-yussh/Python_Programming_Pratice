@@ -9,6 +9,7 @@ choices={
 computer = random.choice([1,2,3])
 
 for i in range(1,4):
+    
     print("Choose only one!\nRock:1\nPaper:2\nScissor:3")
     user=int(input("Enter you choice:"))
 
