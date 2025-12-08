@@ -9,7 +9,7 @@ choices={
 computer_wins=0
 user_wins=0
 
-for i in range(1,4):
+for i in range(1,6):
     computer = random.choice([1,2,3])
 
     print("Choose only one!\nRock:1\nPaper:2\nScissor:3")
