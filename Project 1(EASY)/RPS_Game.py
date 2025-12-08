@@ -6,11 +6,11 @@ choices={
     3:"Scissor"
 }
 
-computer = random.choice([1,2,3])
 computer_wins=0
 user_wins=0
 
 for i in range(1,4):
+    computer = random.choice([1,2,3])
 
     print("Choose only one!\nRock:1\nPaper:2\nScissor:3")
     user=int(input("Enter you choice:"))
@@ -74,7 +74,7 @@ for i in range(1,4):
 if(computer_wins>user_wins):
     print(f"Finally Computer Wins And his point is {computer_wins}")
 
-elif(user_wins<computer_wins):
+elif(user_wins>computer_wins):
     print(f"Finally User Wins And his point is {user_wins}")
 
 elif(user_wins==computer_wins):
