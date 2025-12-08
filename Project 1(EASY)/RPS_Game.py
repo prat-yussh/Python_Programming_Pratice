@@ -16,43 +16,66 @@ for i in range(1,4):
     user=int(input("Enter you choice:"))
     print("")
 
-
     if(computer==user):
-        print("Its a draw")
+        print("--------------\nIts a draw\n--------------")
         print("")
         print(f"Computer score={computer_wins}")
         print(f"User score={user_wins}")
+
     else:
         if(computer==1 and user==2):
-            print("You Win")
+            print("--------------\nYou Win\n--------------")
             print("")
             user_wins=user_wins+1
             print(f"Computer score={computer_wins}")
             print(f"User score={user_wins}")
+
         elif(computer==1 and user==3):
-            print("Computer Wins")
+            print("--------------\nComputer Wins\n--------------")
             print("")
+            computer_wins=computer_wins+1
+            print(f"Computer score={computer_wins}")
+            print(f"User score={user_wins}")
+
         elif(computer==2 and user==1):
-            print("Computer Wins")
+            print("--------------\nComputer Wins\n--------------")
             print("")
+            computer_wins=computer_wins+1
+            print(f"Computer score={computer_wins}")
+            print(f"User score={user_wins}")
+
         elif(computer==2 and user==3):
-            print("You Wins")
+            print("--------------\nYou Wins\n--------------")
             print("")
             user_wins=user_wins+1
             print(f"Computer score={computer_wins}")
             print(f"User score={user_wins}")
+
         elif(computer==3 and user==1):
-            print("You Wins")
+            print("--------------\nYou Wins\n--------------")
             print("")
             user_wins=user_wins+1
             print(f"Computer score={computer_wins}")
             print(f"User score={user_wins}")
             
         elif(computer==3 and user==2):
-            print("Computer Wins")
+            print("--------------\nComputer Wins\n--------------")
             print("")
+            computer_wins=computer_wins+1
+            print(f"Computer score={computer_wins}")
+            print(f"User score={user_wins}")
+
         else:
-            print("Something Went Wrong")
+            print("--------------\nSomething Went Wrong\n--------------")
             print("")
 
-    print(f"Computr choice:{choices[computer]}\nUSer Choice:{choices[user]}\n")    
+    print(f"Computr choice:{choices[computer]}\nUSer Choice:{choices[user]}\n")
+
+if(computer_wins>user_wins):
+    print(f"Finally Computer Wins And his point is {computer_wins}")
+
+elif(user_wins<computer_wins):
+    print(f"Finally User Wins And his point is {user_wins}")
+
+elif(user_wins==computer_wins):
+    print(f"Finally Its a Draw And Both of you get same points {user_wins} {computer_wins}\n")
