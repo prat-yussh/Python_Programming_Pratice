@@ -4,7 +4,7 @@ import os
 
     
 for i in range(2,21):
-    with open(f"{i}.txt", "a") as f:
+    with open(f"{i}.txt", "a+") as f:
         create=f.write()
         print(f"This is Multiplication Table of:{i}")
     for j in range(1,11):
