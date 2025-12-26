@@ -1,8 +1,6 @@
-student = {
-    "name": "Pratyush",
-    "age": 20,
-    "course": "CSE"
-}
+a = {1, 2, 3}
+b = {3, 4, 5}
 
-for key, value in student.items():
-    print(key, value)
+print(a | b)   # union
+print(a & b)   # intersection
+print(b - a)   # difference
