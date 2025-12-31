@@ -3,9 +3,14 @@
 7. Write a program to find out the line number where python is present from ques 6. 
 """
 
-with open("log.txt", "r") as f:
-    content=f.read()
-    if("python" in content):
-        print("It contains python word")
-    else:
-        print("It doesnt contains python word")
+with open("log.txt") as f:
+    content=f.readlines()
+    
+line=1
+for i in content:
+    if("python" in i):
+        print(f"It contains python word in line {line}")
+        break
+    line+=1
+else:
+    print("It doesnt contains python word")
