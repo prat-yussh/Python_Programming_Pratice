@@ -1,6 +1,7 @@
-a = {1, 2, 3}
-b = {3, 4, 5}
+game_running = True
 
-print(a | b)   # union
-print(a & b)   # intersection
-print(b - a)   # difference
+while game_running:
+    print("Game running...")
+    user = input("Type quit to stop: ")
+    if user == "quit":
+        game_running = False
