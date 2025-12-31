@@ -1,1 +1,11 @@
-Sometimes the simplest moments end up being the most meaningful. A quiet morning, a cup of tea going cold on the table, and a few minutes of uninterrupted thought can reset an entire day. In a world that constantly pushes for speed and noise, slowing down feels almost rebellious, yet it’s often in that pause that clarity shows up. You  remember what actually matters, what can wait, and what doesn’t deserve your energy at all.
+Sometimes the simplest moments 
+end up being the most meaningful. 
+A quiet morning, a cup of tea going
+ cold on the table, and a few minutes 
+of uninterrupted thought can reset an 
+entire day. In a world that constantly 
+pushes for speed and noise, python slowing down 
+feels almost rebellious, yet it’s often 
+in that pause that clarity shows up. You 
+remember what actually matters, what can 
+wait, and what doesn’t deserve your energy at all.

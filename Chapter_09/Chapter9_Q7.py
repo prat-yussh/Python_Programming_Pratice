@@ -1,4 +1,7 @@
-#  Write a program to mine a log file and find out whether it contains ‘python’. 
+"""
+6. Write a program to mine a log file and find out whether it contains "python". 
+7. Write a program to find out the line number where python is present from ques 6. 
+"""
 
 with open("log.txt", "r") as f:
     content=f.read()
