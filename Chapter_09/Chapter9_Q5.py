@@ -3,8 +3,11 @@
 5. Repeat program 4 for a list of such words to be censored. 
 """
 
-with open("Chapter9_Q4(Donkey).txt", "r") as f:
-    content=f.read().strip().lower()
-    updated_content=content.replace("donkey","#####")
-    with open("Chapter9_Q4(Donkey).txt", "w") as f:
-        f.write(updated_content)
+word=["Donkey","badword","rude","secret"]
+
+for i in word:
+    with open("Chapter9_Q4(Donkey).txt", "r") as f:
+        content=f.read().strip().lower()
+        updated_content=content.replace(i,"#"*len(word))
+        with open("Chapter9_Q4(Donkey).txt", "w") as f:
+            f.write(updated_content)
