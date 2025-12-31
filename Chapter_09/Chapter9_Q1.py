@@ -1,6 +1,6 @@
 # Write a program to read the text from a given file ‘poems.txt’ and find out whether it contains the word ‘twinkle’. 
 
-with open("poems.txt") as f:
+with open("Chapter_09/poems.txt") as f:
     w=f.read()
     if ("twinkle" in w):
         print("It contains Twinkle")

@@ -6,3 +6,5 @@ User point:2
 Last time User Wins and his score is:2
 
 Last time User Wins and his score is:4
+
+Last time User Wins and his score is:3

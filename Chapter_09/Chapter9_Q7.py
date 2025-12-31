@@ -3,7 +3,7 @@
 7. Write a program to find out the line number where python is present from ques 6. 
 """
 
-with open("log.txt") as f:
+with open("Chapter_09/log.txt") as f:
     content=f.readlines()
     
 line=1

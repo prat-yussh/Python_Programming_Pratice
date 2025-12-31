@@ -6,7 +6,7 @@
 word=["Donkey","badword","rude","secret"]
 
 for i in word:
-    with open("Chapter9_Q4(Donkey).txt", "r") as f:
+    with open("Chapter_09/Chapter9_Q4(Donkey).txt", "r") as f:
         content=f.read().strip().lower()
         updated_content=content.replace(i,"#"*len(word))
         with open("Chapter9_Q4(Donkey).txt", "w") as f:

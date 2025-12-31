@@ -76,13 +76,13 @@ def game():
 
     if(computer_wins>user_wins):
         print(f"Finally Computer Wins And his point is {computer_wins}")
-        with open("Hi-score.txt" , "a+") as f:
+        with open("Chapter_09/Hi-score.txt" , "a+") as f:
             w=f.write(f"\nLast time Computer Winns and his score is:{computer_wins}\n")
             # print(f"Last time Computer Winns and his score is:{computer_wins}\n")
 
     elif(user_wins>computer_wins):
         print(f"Finally User Wins And his point is {user_wins}")
-        with open("Hi-score.txt" , "a+") as f:
+        with open("Chapter_09/Hi-score.txt" , "a+") as f:
             w=f.write(f"\nLast time User Wins and his score is:{user_wins}\n")
             # print(f"Last time User Wins and his score is:{user_wins}\n")
 
@@ -90,7 +90,7 @@ def game():
     elif(user_wins==computer_wins):
         print(f"Finally Its a Draw And Both of you get same points {user_wins} {computer_wins}\n")
 
-        with open("Hi-score.txt" , "a+") as f:
+        with open("Chapter_09/Hi-score.txt" , "a+") as f:
             w=f.write(f"\nLast time Both of you got same points\nComputer point:{computer_wins}\nUser point:{user_wins}\n")
             # print(f"Last time Both of you got same points\nComputer point:{computer_wins}\nUser point:{user_wins}")
 
