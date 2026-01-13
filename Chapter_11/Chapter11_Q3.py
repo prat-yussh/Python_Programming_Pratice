@@ -7,10 +7,20 @@ which changes the value of increment based on the salary.
 """
 
 class Employee:
-    def __init__(self, name, salery, saleryIncrement):
+    def __init__(self, name, salery):
         self.name=name
         self.salery=salery
-        self.saleryIncrement=self.salery+500
+        self.increment=0
 
-o=Employee("Pratyush",500)
+    @property
+    def salaryAfterIncrement(self):
+        return self.salery+self.increment
+    
+    @salaryAfterIncrement.setter
+    def salaryAfterIncrement(self, new_salery):
+        self.increment=new_salery-self.salery
 
+obj=Employee("Pratyush",45000)
+obj.salaryAfterIncrement=50000
+print(obj.increment)
+print(obj.salaryAfterIncrement)
