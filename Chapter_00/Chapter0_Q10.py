@@ -5,5 +5,5 @@ In Python, variables store values, not references.
 
 """
 In Python, variables store values, not references.
-True because varriable is a like a containe which stores values
+False because varriable stores refrence it depends on the data type int,float,str,tuple is imutable and list,set,dict is mutable.
 """
