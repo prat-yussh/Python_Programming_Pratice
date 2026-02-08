@@ -11,4 +11,4 @@ print(b)
 a = "hello"
 b = a #hello
 a = a + " world" #helloworld
-print(b) #hello
+print(b) #hello becuse str is immutable
