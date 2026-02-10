@@ -14,4 +14,4 @@ c = a[:]
 
 print(a is b) #True
 print(a is c) #False
-print(a == c) #FAlse
+print(a == c) #TRue
