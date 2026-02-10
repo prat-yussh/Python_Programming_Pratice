@@ -1,0 +1,5 @@
+"""
+Bitwise + Comparison Precedence
+print(6 & 3 == 2)
+"""
+print(6 & 3 == 2) #True
