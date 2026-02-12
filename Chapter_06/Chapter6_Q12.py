@@ -12,7 +12,8 @@ else:
     print("Done")
 """
 Output:-
+0
 1
 2
-3
+Done
 """
