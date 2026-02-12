@@ -1,2 +1,13 @@
-a,b=[int(x) for x in input("Enter two number").split(",")]
-print(a+b)
+n=int(input("Enter a number"))
+if(n<1):
+    print("it is not prime number")
+else:
+    is_prime=True
+    for i in range(2,n//2+1):
+        if(n%i==0):
+            is_prime=False
+            break
+    if is_prime==True:
+        print("the number is prime")
+    else:
+        print("the number is not prime")
