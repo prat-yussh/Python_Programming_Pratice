@@ -8,15 +8,15 @@ Count how many digits it has.
 num=int(input("Enter a number:"))
 
 if num<0:
-    num= -num
+    num = -num
 
 if num==0:
     count=1
-   
+
 else:
     count=0
     while num>0:
-        num = num//10
+        num=num//10
         count=count+1
 
-print("Number of digits are:{}".format(count))
+print("The nubere of digits are:{}".format(count))
