@@ -12,8 +12,7 @@ if num<0:
 
 if num==0:
     count=1
-    # print("Number of digits are:{}".format(count))
-    
+   
 else:
     count=0
     while num>0:
