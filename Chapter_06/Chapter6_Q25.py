@@ -12,14 +12,13 @@ Explain logic only.
 num=int(input("Enter a number:"))
 Original_num=num
 reverse=0
-
+last=0
 while num>0:
     last=num%10
     num=num//10
     reverse=reverse*10+last
 
-if Original_num==reverse:
-    print("it is a palindrome number")
-
+if reverse==Original_num:
+    print("palindrome")
 else:
-    print("it is not a palindrome number")
+    print("not palindrome")

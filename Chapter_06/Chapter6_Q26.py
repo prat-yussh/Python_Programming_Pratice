@@ -10,7 +10,7 @@ num=int(input("Enter a number:"))
 
 is_prime=True
 
-if num<=1:
+if num==0 or num==1:
     is_prime=False
 
 else:
@@ -18,7 +18,7 @@ else:
         if num%i==0:
             is_prime=False
             break
-        
+
 if is_prime:
     print("its is a prime number")
 else:
