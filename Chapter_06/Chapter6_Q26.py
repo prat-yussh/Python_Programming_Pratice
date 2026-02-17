@@ -10,7 +10,7 @@ num=int(input("Enter a number:"))
 
 is_prime=True
 
-if num<0:
+if num<=1:
     is_prime=False
 
 else:
