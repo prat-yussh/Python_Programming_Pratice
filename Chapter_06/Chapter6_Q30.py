@@ -29,3 +29,15 @@ while True:
     elif user>randomNum:
         print("Too High")
 
+"""
+Start game
+↓
+Computer chooses secret number
+↓
+Repeat forever:
+    Ask user for guess
+    Compare guess with secret number
+    If correct → stop game
+    If smaller → say Too Low
+    If larger → say Too High
+"""
