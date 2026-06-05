@@ -1,1 +1,7 @@
-print(1%10)
+str="hello" \
+"world"
+print(str)
+mu="""hello
+
+world"""
+print(mu)
