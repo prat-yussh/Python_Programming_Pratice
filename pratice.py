@@ -1,69 +1,96 @@
-# Q11: Course Scholarship Calculator
+# Final Practice: Online Store Checkout
+product_price = 2400
+quantity = 3
+stock_available = 5
+coupon_code = "SAVE10"
+valid_coupons = ["SAVE10", "WELCOME"]
+premium_member = True
+tax_percent = 5
+delivery_charge = 100
+wallet_balance = 7000
 
-# A learning platform has this data:
+# Build a checkout program with these exact requirements.
 
-course_fee = 12000
-discount_percent = 15
-completed_courses = 3
-student_rating = 4.6
-skills = ["Python", "SQL"]
-referral_code = "SAVE500"
-valid_codes = ["SAVE500", "NEW100"]
-extra_discount = 500
-wallet_balance = 11000
+# 1. Calculate subtotal
+subtotal = product_price * quantity
 
-# Build a program that follows these exact rules.
+# 2. Check stock
+# Store True in stock_available_for_order when the available stock is greater than or equal to the requested quantity.
 
-# 1. Calculate the normal discount
-normal_discount = course_fee * discount_percent / 100
+stock_available_for_order = stock_available >= quantity
 
-# 2. Check scholarship eligibility
-# The student is eligible only when all these conditions are true:
-# Completed courses are at least 2
-# Student rating is at least 4.5
-# "Python" is present in skills
-# Store the result in:
-# It should contain True or False.
+# 3. Check coupon
+# Store True in coupon_valid when coupon_code is present in valid_coupons.
 
-scholarship_eligible = (completed_courses >= 2) and (student_rating >=4.5) and ("Python" in skills)
+coupon_valid = coupon_code in valid_coupons
 
-# 3. Approve the extra discount
-# The extra discount is approved only when:
-# The student is scholarship eligible AND The referral code is present in valid_codes
-# Store 500 when approved; otherwise store 0.
-# Variable name:
-# Use a ternary expression.
+# 4. Decide discount percentage
+# Premium member with a valid coupon → 15%
+# Non-premium member with a valid coupon → 10%
+# Invalid coupon → 0%
+# Store the result in approved_discount_percent.
+# Use ternary expressions.
 
-approved_extra_discount = 500 if scholarship_eligible and referral_code == "SAVE500" else 0
+approved_discount_percent = 15 if (premium_member and coupon_valid) else 10 if (premium_member == False and coupon_valid) else 0
 
-# 4. Calculate the final course fee
-final_fee = course_fee - normal_discount - approved_extra_discount
+# 5. Calculate discount amount
 
-# 5. Check whether the wallet has enough money
-# Wallet balance must be greater than or equal to the final fee
-# Store the Boolean result in:
+discount_amount = subtotal * approved_discount_percent / 100
 
-can_purchase = wallet_balance >= final_fee
+# 6. Calculate price after discount
 
-# 6. Create the purchase status
+discounted_price = subtotal - discount_amount
+
+# 7. Decide delivery charge
+# Discounted price is at least 5000 → delivery charge is 0
+# Otherwise → delivery charge is 100
+# Store it in approved_delivery_charge.
+
+approved_delivery_charge = 0 if discounted_price >=5000 else 100
+
+# 8. Calculate tax
+
+tax_amount = discounted_price * tax_percent / 100
+
+# 9. Calculate final bill
+
+final_bill = discounted_price + approved_delivery_charge + tax_amount
+
+# 10. Check whether the order can be completed
+# The order can be completed only when:
+# Enough stock AND Wallet balance is greater than or equal to final bill
+# Store the Boolean result in order_approved.
+
+order_approved = stock_available_for_order and wallet_balance >= final_bill
+
+# 11. Create order status
 # Store:
-# "Purchase Successful" when can_purchase is True; otherwise store "Insufficient Balance"
+# "Order Successful"
+# when approved, otherwise:
+# "Order Failed"
 # Use a ternary expression.
 
-purchase_status = "Purchase Successful" if can_purchase == True else "Insufficient Balance"
+order_status = "Order Successful" if order_approved else "Order Failed"
 
-# 7. Calculate the remaining wallet balance
-# When the purchase is possible:
-# Otherwise, the remaining balance should stay equal to the original wallet balance.
+# 12. Update wallet and stock
+# When the order is approved:
 
-remaining_balance = wallet_balance - final_fee if can_purchase == True else wallet_balance
+remaining_wallet = wallet_balance - final_bill if order_approved else wallet_balance
+remaining_stock = stock_available - quantity if order_approved else stock_available
 
+# When the order fails, both values must remain unchanged.
 
 # Print these labeled outputs
-print("Normal discount:",normal_discount)
-print("Scholarship eligible:",scholarship_eligible)
-print("Approved extra discount:",approved_extra_discount)
-print("Final course fee:",final_fee)
-print("Can purchase:",can_purchase)
-print("Purchase status:",purchase_status)
-print("Remaining wallet balance:",remaining_balance)
+print("Subtotal:",subtotal)
+print("Stock available:",stock_available)
+print("Coupon valid:",coupon_valid)
+print("Approved discount percent:",approved_discount_percent)
+print("Discount amount:",discount_amount)
+print("Discounted price:",discounted_price)
+print("Delivery charge:",delivery_charge)
+print("Tax amount:",tax_amount)
+print("Final bill:",final_bill)
+print("Order approved:",order_approved)
+print("Order status:",order_status)
+print("Remaining wallet:",remaining_wallet)
+print("Remaining stock:",remaining_stock)
