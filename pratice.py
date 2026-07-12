@@ -1,31 +1,33 @@
-# Q1: Freelance Invoice Generator
+# Q2: Trip Expense Splitter
 
-# Create a program that takes all details from the user instead of using fixed values.
+# Three friends went on a trip. The user will enter these three expenses in one line, separated by commas:
 
-# User must enter
-# Client name
-# Number of videos edited
-# Price per video
-# Bonus amount
-# Program must calculate
-# Editing charge = Number of videos × Price per video
+# Fuel,Food,Toll
 
-# Final payment = Editing charge + Bonus
-# Program must print this invoice
-# ------ INVOICE ------
-# Client: Rahul
-# Videos edited: 6
-# Price per video: 850.0
-# Editing charge: 5100.0
-# Bonus: 500.0
-# Final payment: 5600.0
-# ---------------------
-# Requirements
-client_name = str(input("Client:"))
-number_of_videos = int(input("Videos edited:"))
-price_per_video = float(input("Price per video:"))
-editing_charges = number_of_videos * price_per_video
-print("Editing charge:",editing_charges)
-bonus_amount = float(input("Bonus:"))
-final_payment = editing_charges + bonus_amount
-print("Final payment:",final_payment)
+# Example input:
+
+# 1500,900,300
+
+# The user will then enter the number of travellers:
+
+# 3
+# Program requirements
+# Read fuel, food, and toll expenses using one input statement.
+# Convert all three expenses to float.
+# Read the number of travellers and convert it to int.
+# Calculate:
+# Total expense = Fuel + Food + Toll
+# Cost per traveller = Total expense ÷ Number of travellers
+fuel,food,toll = [float(value) for value in input("fuel,food,toll:").split(",")]
+number_of_traveller = int(input("number of travellers:"))
+total_expenses = fuel + food + toll
+cost_per_travell = total_expenses / number_of_traveller
+
+print("------ TRIP EXPENSE ------")
+print("Fuel:",fuel)
+print("Food:",food)
+print("Toll:",toll)
+print("Total expense:",total_expenses)
+print("Travellers:",number_of_traveller)
+print("Cost per traveller:",cost_per_travell)
+print("---------------------")
