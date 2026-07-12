@@ -1,33 +1,44 @@
-# Q2: Trip Expense Splitter
+# Q3: Sales Report Generator
 
-# Three friends went on a trip. The user will enter these three expenses in one line, separated by commas:
+# A shop employee records sales for three days.
 
-# Fuel,Food,Toll
+# Input
 
-# Example input:
+# Ask the user to enter:
 
-# 1500,900,300
+# Employee name
+# Sales for Day 1, Day 2, and Day 3 in one line separated by spaces
+# Weekly sales target
 
-# The user will then enter the number of travellers:
+# Example:
 
-# 3
+# Employee name: Pratyush
+employee_name = input("Employee name:")
+# Enter 3 sales amounts: 2500 3200 2800
+day1,day2,day3 = [float(value) for value in input("Enter 3 sales amounts:").split(',')]
+# Enter target: 8000
 # Program requirements
-# Read fuel, food, and toll expenses using one input statement.
-# Convert all three expenses to float.
-# Read the number of travellers and convert it to int.
+# Store the employee name as a string.
+# Separate the three sales values from the single input.
+# Convert each sales value to float.
+# Convert the target to float.
+target = float(input("Traget:"))
 # Calculate:
-# Total expense = Fuel + Food + Toll
-# Cost per traveller = Total expense ÷ Number of travellers
-fuel,food,toll = [float(value) for value in input("fuel,food,toll:").split(",")]
-number_of_traveller = int(input("number of travellers:"))
-total_expenses = fuel + food + toll
-cost_per_travell = total_expenses / number_of_traveller
-
-print("------ TRIP EXPENSE ------")
-print("Fuel:",fuel)
-print("Food:",food)
-print("Toll:",toll)
-print("Total expense:",total_expenses)
-print("Travellers:",number_of_traveller)
-print("Cost per traveller:",cost_per_travell)
-print("---------------------")
+# Total sales = Day 1 + Day 2 + Day 3
+total_sales = day1+day2+day3
+# Average sales = Total sales ÷ 3
+avg_sales = total_sales / 3
+# Target achieved = Total sales is greater than or equal to target
+target_achived = "target achived" if total_sales >= target else ""
+# Print the employee name and three daily sales on one line using | as the separator:
+# Pratyush | 2500.0 | 3200.0 | 2800.0
+print("{} | {} | {} | {}".format(employee_name,day1,day2,day3))
+# Print these labeled results:
+print("Total sales:",total_sales)
+print("Average sales:",avg_sales)
+print("Target:",target)
+print("Target achieved:",target_achived)
+# Use two separate print() statements to display this on one line:
+# Report generated successfully
+print("Report generated",end="")
+print("Successfuly")
