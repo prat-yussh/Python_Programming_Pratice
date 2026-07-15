@@ -1,27 +1,25 @@
-# Q7: Employee Salary Slip
+# Q8: Order Receipt Formatting
+customer_name = "Pratyush"
+number_of_items = 3
+subtotal = 2499.5
+tax = 124.975
 
-# Take these values from the keyboard:
+# Write only the print statements needed to produce:
 
-employee_name = input("Enter your name:")
-basic_salary = float(input("Enter your salary:"))
-Allowance = float(input("Enter your allowence:"))
-Deduction = float(input("Enter your deduction:"))
-# Calculate
-gross_salary = basic_salary + Allowance
+print("Customer:%s" % customer_name)
+print("Items:%d" % number_of_items)
+print("Subtotal:%.2f" % subtotal)
+print("Tax:%.2f" % tax)
 
-Net_salary = gross_salary - Deduction
-# Print this exact report
-print("-------- SALARY SLIP --------")
-print("Employee:{}".format(employee_name))
-print("Basic salary:{:.2f}".format(basic_salary))
-print("Allowance:{:.2f}".format(Allowance))
-print("Deduction:{:.2f}".format(Deduction))
-print("Gross salary:{:.2f}".format(gross_salary))
-print("Net salary:{:.2f}".format(Net_salary))
-print("-----------------------------")
-# Exact requirements
-# Employee name remains a string.
-# All money values must be converted to float.
-# Show every money value with exactly two decimal places.
-# Use .format() for the salary output lines.
-# Do not hardcode the values.
+# Use % formatting.
+
+# Short note
+# %s    → string
+# %d    → integer
+# %.2f  → float with two decimal places
+
+# Example pattern:
+
+# print("Name: %s" % name)
+
+# After this, we’ll do one compact final PDF 3 problem and move to Flow Control.
