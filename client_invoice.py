@@ -1,55 +1,27 @@
-# Q6: Command-Line Client Invoice
+# Q7: Employee Salary Slip
 
-# Create a file named:
+# Take these values from the keyboard:
 
-# client_invoice.py
+employee_name = input("Enter your name:")
+basic_salary = float(input("Enter your salary:"))
+Allowance = float(input("Enter your allowence:"))
+Deduction = float(input("Enter your deduction:"))
+# Calculate
+gross_salary = basic_salary + Allowance
 
-# Run it like this:
-
-# python client_invoice.py "Rahul Kumar" 6 850 500
-
-# The arguments represent:
-
-# "Rahul Kumar" → client name
-# 6             → videos edited
-# 850           → price per video
-# 500           → bonus
-
-# The quotation marks keep Rahul Kumar together as one command-line argument. Command-line arguments arrive as strings, so numeric values must be converted before calculation.
-
+Net_salary = gross_salary - Deduction
+# Print this exact report
+print("-------- SALARY SLIP --------")
+print("Employee:{}".format(employee_name))
+print("Basic salary:{:.2f}".format(basic_salary))
+print("Allowance:{:.2f}".format(Allowance))
+print("Deduction:{:.2f}".format(Deduction))
+print("Gross salary:{:.2f}".format(gross_salary))
+print("Net salary:{:.2f}".format(Net_salary))
+print("-----------------------------")
 # Exact requirements
-# Read all four values from command-line arguments.
-# Convert:
-# videos to int
-# price per video to float
-# bonus to float
-# Calculate:
-# Editing charge = Videos × Price per video
-# Final payment = Editing charge + Bonus
-# Print this report:
-# ------ CLIENT INVOICE ------
-# Client: Rahul Kumar
-# Videos: 6 | Price per video: 850.0
-# Editing charge: 5100.0
-# Bonus: 500.0
-# Final payment: 5600.0
-# ----------------------------
-# Use .format() to create this particular line:
-# Videos: 6 | Price per video: 850.0
-from sys import argv
-
-name = (argv[1])
-videos_edited = int(argv[2])
-price_per_video = float(argv[3])
-bonus = float(argv[4])
-
-editing_charge = videos_edited * price_per_video
-final_payment = editing_charge + bonus
-
-print("------ CLIENT INVOICE ------")
-print("Client:",name)
-print("Videos:{} | Price per video:{}".format(videos_edited,price_per_video))
-print("Editing charge:",editing_charge)
-print("Bonus:",bonus)
-print("Final payment:",final_payment)
-print("----------------------------")
+# Employee name remains a string.
+# All money values must be converted to float.
+# Show every money value with exactly two decimal places.
+# Use .format() for the salary output lines.
+# Do not hardcode the values.
