@@ -1,25 +1,39 @@
-# Q8: Order Receipt Formatting
-customer_name = "Pratyush"
-number_of_items = 3
-subtotal = 2499.5
-tax = 124.975
+# Final Challenge: Client Payment Receipt
 
-# Write only the print statements needed to produce:
+# Ask the user to enter:
 
-print("Customer:%s" % customer_name)
-print("Items:%d" % number_of_items)
-print("Subtotal:%.2f" % subtotal)
-print("Tax:%.2f" % tax)
+client_name = input("Enter your name:")
+# Three values in one line separated by commas:
+# Number of videos, price per video, bonus
 
-# Use % formatting.
+# Example input:
 
-# Short note
-# %s    → string
-# %d    → integer
-# %.2f  → float with two decimal places
+# Client name: Rahul
+number_of_videos, price_per_videos, bonus = input("Enter videos,price and bonus:").split(",")
 
-# Example pattern:
+number_of_videos, price_per_videos, bonus = (
+    int(number_of_videos),
+    float(price_per_videos),
+    float(bonus)
+    )
+# Exact requirements
+# Convert number of videos to int.
+# Convert price and bonus to float.
+# Calculate:
+editing_charge = number_of_videos * price_per_videos
+final_payment = editing_charge + bonus
+# Print the client name, videos, and price on one line separated by |.
 
-# print("Name: %s" % name)
+# Show all money values with exactly two decimal places.
+# Use two separate print() statements with end to display:
 
-# After this, we’ll do one compact final PDF 3 problem and move to Flow Control.
+# Receipt generated successfully
+# Required output format
+print("------ PAYMENT RECEIPT ------")
+print(client_name,number_of_videos,price_per_videos,sep=" | ")
+print("Editing charge: ₹{:.2f}".format(editing_charge))
+print("Bonus: ₹{:.2f}".format(bonus))
+print("Final payment: ₹{:.2f}".format(final_payment))
+print("-----------------------------")
+print("Receipt generated",end=" ")
+print("successfully")
