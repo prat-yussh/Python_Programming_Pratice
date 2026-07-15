@@ -1,32 +1,31 @@
-# Q2: Personal Loan Application
+# Q3: Weekly Expense Analyzer
 
-# Ask the user to enter:
+# The user enters five daily expenses in one line:
 
-age = int(input("Enter age:"))
-monthly_income = float(input("Enter monthly income:"))
-credit_score = float(input("Enter credit score:"))
-Existing_loan_status: str(input("Enter existing loan status yes or no:"))
+# Enter 5 expenses: 500 1200 300 2500 700
+# Exact requirements
 
-# Apply these rules in the exact order below:
+expenses = [int(value) for value in input("Enter 5 expenses: ").split()]
 
-# Age below 21 or above 60:
-# Application rejected: age not eligible
-# Monthly income below 25000:
-# Application rejected: income too low
-# Credit score below 650:
-# Application rejected: low credit score
-# Existing loan is "yes" and monthly income is below 50000:
-# Application sent for manual review
-# Otherwise:
-# Loan application approved
+# Using a for loop:
 
-if age<21 or age>60:
-    print("Application rejected: age not eligible")
-elif monthly_income < 25000:
-    print("Application rejected: income too low")
-elif credit_score < 650:
-    print("Application rejected: low credit score")
-elif Existing_loan_status == "yes" and monthly_income < 50000:
-    print("Application sent for manual review")
-else:
-    print("Loan application approved")
+# Calculate the total expense.
+# Count how many expenses are greater than 1000.
+# Print each expense greater than 1000 with this message:
+# High expense: 1200
+# After the loop, print:
+# Total expense:
+# Number of high expenses:
+
+total_expenses = 0
+total_expenses_count = 0
+
+for expense in expenses:
+    total_expenses = total_expenses + expense
+
+    if expense > 1000:
+        total_expenses_count = total_expenses_count + 1
+        print("High expense:",expense)
+
+print("Total expenses:",total_expenses)
+# Do not use sum() or count(). Calculate both values manually inside the loop.
