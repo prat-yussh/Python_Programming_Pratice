@@ -2,10 +2,10 @@
 
 # Ask the user to enter:
 
-# Age
-# Monthly income
-# Credit score
-# Existing loan status: yes or no
+age = int(input("Enter age:"))
+monthly_income = float(input("Enter monthly income:"))
+credit_score = float(input("Enter credit score:"))
+Existing_loan_status: str(input("Enter existing loan status yes or no:"))
 
 # Apply these rules in the exact order below:
 
@@ -20,4 +20,13 @@
 # Otherwise:
 # Loan application approved
 
-# Use if, elif, and else. Only one final message should be printed.
+if age<21 or age>60:
+    print("Application rejected: age not eligible")
+elif monthly_income < 25000:
+    print("Application rejected: income too low")
+elif credit_score < 650:
+    print("Application rejected: low credit score")
+elif Existing_loan_status == "yes" and monthly_income < 50000:
+    print("Application sent for manual review")
+else:
+    print("Loan application approved")
