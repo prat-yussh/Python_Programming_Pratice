@@ -1,39 +1,47 @@
-# Final Challenge: Client Payment Receipt
+# Q1: ATM Withdrawal Validator
 
-# Ask the user to enter:
+# Create a program that asks the user for:
 
-client_name = input("Enter your name:")
-# Three values in one line separated by commas:
-# Number of videos, price per video, bonus
+current_balance = int(input("Enter you current balance:"))
+withdrawal_amount = int(input("Enter your eithdrawl amount:"))
+# Apply the rules in this exact order
+# When the withdrawal amount is 0 or negative, print:
+# Invalid withdrawal amount
+# Otherwise, when the amount is not a multiple of 100, print:
+# Enter amount in multiples of 100
+# Otherwise, when the amount is greater than the current balance, print:
+# Insufficient balance
+# Otherwise, when withdrawing the amount would leave less than ₹500, print:
+# Minimum balance of ₹500 must be maintained
+# Otherwise:
+# subtract the amount from the balance;
+# print Withdrawal successful;
+# print the remaining balance.
+# Example
+# Current balance: 5000
+# Withdrawal amount: 4200
 
-# Example input:
+after_withdrawl = current_balance - withdrawal_amount
 
-# Client name: Rahul
-number_of_videos, price_per_videos, bonus = input("Enter videos,price and bonus:").split(",")
+if withdrawal_amount == 0 or withdrawal_amount<0:
+    print("Invalid withdrawal amount")
+elif withdrawal_amount%100 != 0:
+    print("Enter amount in multiples of 100:",withdrawal_amount)
+elif withdrawal_amount>current_balance:
+    print("Insufficient balance")
+elif after_withdrawl<500:
+    print("Minimum balance of ₹500 must be maintained")
+else:
+    print("Withdrawal successful")
+    print("Remaing balance",after_withdrawl)
+    current_balance = after_withdrawl
+    print("Withdrawal successful")
+    print("Remaining balance:", current_balance)
 
-number_of_videos, price_per_videos, bonus = (
-    int(number_of_videos),
-    float(price_per_videos),
-    float(bonus)
-    )
-# Exact requirements
-# Convert number of videos to int.
-# Convert price and bonus to float.
-# Calculate:
-editing_charge = number_of_videos * price_per_videos
-final_payment = editing_charge + bonus
-# Print the client name, videos, and price on one line separated by |.
 
-# Show all money values with exactly two decimal places.
-# Use two separate print() statements with end to display:
+# Output:
 
-# Receipt generated successfully
-# Required output format
-print("------ PAYMENT RECEIPT ------")
-print(client_name,number_of_videos,price_per_videos,sep=" | ")
-print("Editing charge: ₹{:.2f}".format(editing_charge))
-print("Bonus: ₹{:.2f}".format(bonus))
-print("Final payment: ₹{:.2f}".format(final_payment))
-print("-----------------------------")
-print("Receipt generated",end=" ")
-print("successfully")
+# Withdrawal successful
+# Remaining balance: 800
+
+# Use if, elif, and else. Check only one rule at a time in the order given.
