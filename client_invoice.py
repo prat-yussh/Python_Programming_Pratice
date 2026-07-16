@@ -1,31 +1,30 @@
-# Q3: Weekly Expense Analyzer
+# Q4: ATM PIN Verification
 
-# The user enters five daily expenses in one line:
+# A user gets a maximum of 3 attempts to enter the correct ATM PIN.
 
-# Enter 5 expenses: 500 1200 300 2500 700
+correct_pin = 4826
+
 # Exact requirements
-
-expenses = [int(value) for value in input("Enter 5 expenses: ").split()]
-
-# Using a for loop:
-
-# Calculate the total expense.
-# Count how many expenses are greater than 1000.
-# Print each expense greater than 1000 with this message:
-# High expense: 1200
-# After the loop, print:
-# Total expense:
-# Number of high expenses:
-
-total_expenses = 0
-total_expenses_count = 0
-
-for expense in expenses:
-    total_expenses = total_expenses + expense
-
-    if expense > 1000:
-        total_expenses_count = total_expenses_count + 1
-        print("High expense:",expense)
-
-print("Total expenses:",total_expenses)
-# Do not use sum() or count(). Calculate both values manually inside the loop.
+# Start the attempt count at 1.
+attempt_count = 1
+# Ask the user to enter the PIN.
+# When the PIN is correct:
+# print Login successful;
+# stop asking for the PIN.
+# When the PIN is wrong:
+# print Incorrect PIN;
+# increase the attempt count.
+# After three incorrect attempts, print:
+# Account locked
+# The program must never ask for more than three PIN attempts.
+while attempt_count<=3:
+    pin = int(input("Enter the pin:"))
+    if pin==correct_pin:
+        print("Login successful")
+        break
+    else:
+        print("Incorrect PIN")
+    if attempt_count==3:
+        print("Account locked")
+        break
+    attempt_count = attempt_count+1
