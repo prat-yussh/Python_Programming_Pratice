@@ -1,48 +1,44 @@
-# Q5: Online Order Processing
+# Q5 is complete. ✅
 
-# The user enters six product prices in one line, separated by spaces.
+# PDF 4.1 — Q6: Student Result Processor
 
-# Example:
+# A school stores marks for three students:
 
-# Enter 6 prices: 500 1200 -50 800 6000 300
-prices = [int(value) for value in input("Enter 6 prices:").split()]
-# Process each price from left to right.
+student_names = ["Asha", "Rahul", "Pratyush"]
 
-# Exact rules
-# Start:
-total_amount = 0
-processed_items = 0
-# When a price is 0 or negative:
-# print Invalid price skipped: <price>
-# skip that price;
-# continue processing the next price.
-# When a price is greater than 5000:
-# print Manual approval required: <price>
-# stop processing immediately.
-# Prices after it must not be processed.
-# For every valid price from 1 to 5000:
-# add it to total_amount;
-# increase processed_items by 1;
-# print Item processed: <price>.
-# After processing, print:
-# Processed items:
-# Total amount:
-# When all six prices are processed without stopping because of a price above 5000, also print:
-# All items processed successfully
-for price in prices:
-    if price <= 0:
-        print("Invalid price skipped:",price)
-        continue
-    elif price > 5000:
-        print("Manual approval required:",price)
-        break
-    else:
-            total_amount += price
-            processed_items += 1
-            print("Item processed:", price)
+student_marks = [
+    [78, 65, 81],
+    [55, 32, 62],
+    [90, 88, 92]
+]
 
-else:
-    print("All items processed successfully")
+# Each inner list contains marks for three subjects.
 
-
-# Use for, continue, break, and the loop’s else block. Do not use sum() or count().
+# Build a program that does exactly this
+total = 0
+# For each student:
+for i in range(len(student_names)):
+    student = student_names[i]
+    print(student)
+    marks = student_marks[i]
+    for mark in marks:
+        total = total + mark
+        print(total)
+# Calculate the total marks manually.
+# Calculate the average marks.
+# Check all three subjects:
+# if any subject mark is below 40, status is "Fail";
+# otherwise, status is "Pass".
+# Print:
+# Student: Asha
+# Total: 224
+# Average: 74.67
+# Status: Pass
+# After processing all students, print:
+# Passed students:
+# Failed students:
+# Rules
+# Use one loop for students.
+# Use another loop inside it for that student’s marks.
+# Do not use sum(), min(), or max().
+# Show the average with two decimal places.
