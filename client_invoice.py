@@ -1,52 +1,38 @@
-# Q1: Customer Contact Masker
+# Q2: Email Account Validator
 
-# Ask the user to enter:
-
-# Customer name
-# 10-digit phone number
+# Ask the user to enter an email address.
 
 # Example:
 
-# Customer name: Pratyush Kumar
-# Phone number: 9876543210
+#   Pratyush123@Gmail.com
 # Exact requirements
-# Remove spaces before and after both inputs.
-# Check whether the phone number contains exactly 10 characters.
-# If it is not 10 characters, print:
-# Invalid phone number
-# Otherwise, create a masked phone number:
-# ******3210
-
-# Only the last four digits should remain visible.
-
-# Create a customer code using:
-# First 3 characters of the name in lowercase
-# +
-# Last 4 digits of the phone number
-
-# For the example:
-
-# pra3210
+# Remove spaces from the beginning and end.
+# Convert the complete email to lowercase.
+# The email is valid only when:
+# it contains exactly one @;
+# @ is not the first character;
+# @ is not the last character;
+# the email ends with .com.
+# When invalid, print:
+# Invalid email
+# When valid:
+# extract everything before @ as the username;
+# extract everything after @ as the domain.
 # Print:
-# Customer: Pratyush Kumar
-# Masked phone: ******3210
-# Customer code: pra3210
+# Email: pratyush123@gmail.com
+# Username: pratyush123
+# Domain: gmail.com
 # Short recall note
-# String indexing → one character
-# String slicing  → part of a string
-# Strings can be joined using +
+# count() → counts occurrences
+# find() → returns the position
+# endswith() → checks the ending
+# slicing → extracts part of a string
 
-# Write the complete code yourself.
+email = input("Enter an email address:").lower().strip()
 
-customer_name = input("Enter name:").strip()
-phone_number = input("Enter phone number:").strip()
-
-if len(phone_number) < 10:
-    print("Invalid phone number")
+if email.count("@") == 1 and email.find("@") != 0 and email.rfind("@") != len(email) - 1 and email.endswith(".com") == True:
+    print("Email:", email)
+    print("Username:",email[:email.find("@")])
+    print("Domain:",email[email.find("@")+1:])
 else:
-    masked_phone_number = "*" * 6 + phone_number[6:]
-
-    customer_code = customer_name[:3] + phone_number[6:]
-    print("Customer:",customer_name)
-    print("Masked phone:",masked_phone_number)
-    print("Customer code:",customer_code)
+    print("Invalid email")
