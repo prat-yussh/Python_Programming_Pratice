@@ -1,55 +1,60 @@
-# Q5 is complete. ✅
+# Q7: Daily Transaction Processor
 
-# PDF 4.1 — Q6: Student Result Processor
+# A shop records transaction amounts one by one during the day.
 
-# A school stores marks for three students:
+# Exact requirements
+# Start these values at 0:
+# Repeatedly ask the user to enter a transaction amount.
+# When the user enters -1:
+# stop taking transactions;
+# do not add -1 to any count or total.
+# When the entered amount is 0 or less than 0—except -1:
+# print Invalid transaction;
+# skip the remaining processing for that amount.
+# When the amount is greater than 5000:
+# print Transaction sent for manual approval;
+# increase rejected_transactions by 1;
+# do not add it to total_sales.
+# For every amount from 1 to 5000:
+# add it to total_sales;
+# increase successful_transactions by 1;
+# print Transaction completed.
+# After the user enters -1, print:
+# Total sales:
+# Successful transactions:
+# Rejected transactions:
+# Average successful transaction:
+# Calculate the average only when at least one transaction was successful. Otherwise, print:
+# Average successful transaction: 0
 
-student_names = ["Asha", "Rahul", "Pratyush"]
+total_sales = 0
+successful_transactions = 0
+rejected_transactions = 0
 
-student_marks = [
-    [78, 65, 81],
-    [55, 32, 62],
-    [90, 88, 92]
-]
+while True:
+    shop_record = int(input("Enter transaction amounts one by one during the day:"))
 
-# Each inner list contains marks for three subjects.
+    if shop_record == -1:
+        print("Total sales:",total_sales)
+        print("Successful transactions:",successful_transactions)
+        print("Rejected transactions:",rejected_transactions)
+        if successful_transactions >= 1:
+            average_successful_transaction = total_sales / successful_transactions
+            print("Avrage Successful Transactions:",average_successful_transaction)
+        else:
+            avrage_successful_transactions = 0
+            print("Avrage Successful Transactions:",avrage_successful_transactions)
+        break
 
-# Build a program that does exactly this
-
-# For each student:
-for i in range(len(student_names)):
-    student = student_names[i]
-    marks = student_marks[i]
-
-    total = 0
-    status = "Pass"
-
-    for mark in marks:
-        total = total + mark
-        if mark < 40:
-            status = "Fail"
+    elif shop_record <= 0:
+        print("Invalid transaction")
+        continue
     
-    avg = total/len(marks)
-        
-    print("Student:",student)
-    print("Total:",total)
-    print("Average:{:.2f}".format(avg))
-    print("Status:",status)
-# Calculate the total marks manually.
-# Calculate the average marks.
-# Check all three subjects:
-# if any subject mark is below 40, status is "Fail";
-# otherwise, status is "Pass".
-# Print:
-# Student: Asha
-# Total: 224
-# Average: 74.67
-# Status: Pass
-# After processing all students, print:
-# Passed students:
-# Failed students:
-# Rules
-# Use one loop for students.
-# Use another loop inside it for that student’s marks.
-# Do not use sum(), min(), or max().
-# Show the average with two decimal places.
+    elif shop_record > 5000:
+        print("Transaction sent for manual approval")
+        rejected_transactions += 1
+    
+    else:
+        total_sales = total_sales + shop_record
+        successful_transactions += 1
+        print("Transaction completed.")
