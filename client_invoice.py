@@ -1,52 +1,52 @@
-# Q8: Final Flow-Control Challenge
+# Q1: Customer Contact Masker
 
-# A parking lot has space for 5 vehicles.
+# Ask the user to enter:
 
-# Repeatedly ask the user to enter a vehicle number.
-# Exact rules
-# Start:
-# When the user enters "close":
-# stop accepting vehicles;
-# print the final report.
-# When the user enters an empty value:
-# print Invalid vehicle number;
-# skip it.
-# When five vehicles have already been parked:
-# print Parking full;
-# increase rejected_vehicles by 1;
-# stop the program.
-# Otherwise:
-# print Vehicle parked;
-# increase parked_vehicles by 1.
-# After the loop, print:
-# Parked vehicles:
-# Rejected vehicles:
-# Available spaces:
+# Customer name
+# 10-digit phone number
 
-# Formula:
+# Example:
 
-# Available spaces = 5 − Parked vehicles
+# Customer name: Pratyush Kumar
+# Phone number: 9876543210
+# Exact requirements
+# Remove spaces before and after both inputs.
+# Check whether the phone number contains exactly 10 characters.
+# If it is not 10 characters, print:
+# Invalid phone number
+# Otherwise, create a masked phone number:
+# ******3210
 
-parked_vehicles = 0
-rejected_vehicles = 0
+# Only the last four digits should remain visible.
 
-while True:
-    vehicle_number = input("enter a vehicle number:")
-    
-    if vehicle_number == "close":
-        break
-    elif vehicle_number == "":
-        print("Invalid vehicle number")
-        continue
-    elif parked_vehicles == 5:
-        print("Parking full")
-        rejected_vehicles += 1
-        break
-    else:
-        print("Vehicle parked")
-        parked_vehicles += 1
+# Create a customer code using:
+# First 3 characters of the name in lowercase
+# +
+# Last 4 digits of the phone number
 
-available_space = 5 - parked_vehicles
-print("Parked vehicle:",parked_vehicles)
-print("Rejected vehicle:",rejected_vehicles)
-print("Available space:",avilable_space)
+# For the example:
+
+# pra3210
+# Print:
+# Customer: Pratyush Kumar
+# Masked phone: ******3210
+# Customer code: pra3210
+# Short recall note
+# String indexing → one character
+# String slicing  → part of a string
+# Strings can be joined using +
+
+# Write the complete code yourself.
+
+customer_name = input("Enter name:").strip()
+phone_number = input("Enter phone number:").strip()
+
+if len(phone_number) < 10:
+    print("Invalid phone number")
+else:
+    masked_phone_number = "*" * 6 + phone_number[6:]
+
+    customer_code = customer_name[:3] + phone_number[6:]
+    print("Customer:",customer_name)
+    print("Masked phone:",masked_phone_number)
+    print("Customer code:",customer_code)
