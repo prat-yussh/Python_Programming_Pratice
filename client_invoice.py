@@ -15,15 +15,26 @@ student_marks = [
 # Each inner list contains marks for three subjects.
 
 # Build a program that does exactly this
-total = 0
+
 # For each student:
 for i in range(len(student_names)):
     student = student_names[i]
-    print(student)
     marks = student_marks[i]
+
+    total = 0
+    status = "Pass"
+
     for mark in marks:
         total = total + mark
-        print(total)
+        if mark < 40:
+            status = "Fail"
+    
+    avg = total/len(marks)
+        
+    print("Student:",student)
+    print("Total:",total)
+    print("Average:{:.2f}".format(avg))
+    print("Status:",status)
 # Calculate the total marks manually.
 # Calculate the average marks.
 # Check all three subjects:
