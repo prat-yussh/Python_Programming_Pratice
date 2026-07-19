@@ -1,47 +1,32 @@
-# Q3: Error Log Keyword Tracker
+# Q4: Product URL Generator
 
-# Ask the user to enter:
+# An online shop needs to convert a product name into a clean URL name.
 
-# a log message;
-# a keyword to search.
+# Example input:
 
-# Example:
+#   Wireless   Mouse / Gaming  
 
-# Log: error timeout error network error
-# Keyword: error
+# Expected output:
 
-# Print every starting index of the keyword:
-
-# Found at position: 0
-# Found at position: 14
-# Found at position: 28
-# Total occurrences: 3
+# Product URL: wireless-mouse-gaming
 # Exact requirements
-# Apply .strip().lower() to both inputs.
-# Use find() inside a while loop.
-# After finding a match, continue searching from the next position.
-# Count the occurrences manually.
-# When no match exists, print:
-# Keyword not found
-# Do not use count().
+# Ask the user to enter a product name.
+# Remove spaces from the beginning and end.
+# Convert it to lowercase.
+# Replace / with a space.
+# Use split() so extra spaces are removed.
+# Join the words using -.
+# Print the final product URL.
 
-log = input("Enter a log message:").strip().lower()
-keyword = input("Enter a keyword to search:")
-occurences = 0
-start_postion = 0 
+# For another example:
 
-while True:
-    postion = log.find(keyword,start_postion)
-    
-    if postion == -1:
-        break
-    
-    print("Found at postion:",postion)
-    occurences += 1
-    start_postion = postion + 1
+# Input:  Apple   MacBook Pro
+# Output: apple-macbook-pro
 
-if occurences == 0:
-    print("Not found")
+# Use replace(), split(), and join().
 
-else:
-    print("occurences:",occurences)
+url = input("Enter product name:").lower().strip()
+url = url.replace("/"," ")
+words = url.split()
+url = "-".join(words)
+print("Product URL:", url)
