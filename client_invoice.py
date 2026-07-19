@@ -1,40 +1,46 @@
-# Q5: Employee employee_id Valemployee_idator
+# Q6: Customer Name Formatter
 
-# Ask the user to enter an employee employee_id.
+# Example input:
 
-# Valemployee_id format:
+#   pRATYUSH   kumar
 
-# ABC1234
-# Exact requirements
+# Expected output:
 
-# The employee employee_id is valemployee_id only when:
-
-# it contains exactly 7 characters;
-# the first 3 characters are alphabets only;
-# the last 4 characters are digits only.
-
-# Convert the first three letters to uppercase before printing.
-
-# Example 1
-# Input: abc1234
-# Valemployee_id employee employee_id: ABC1234
-# Example 2
-# Input: ab12345
-# Invalemployee_id employee employee_id
+# Name corrected
+# Formatted name: Pratyush Kumar
+# Requirements
+# Remove spaces from both ends.
+# Remove extra spaces between words using split() and join().
+# The name is valid only when it contains letters and spaces.
+# If invalid, print:
+# Invalid name
+# If the cleaned name is already in title case, print:
+# Name already formatted
+# Otherwise, print:
+# Name corrected
+# Print the name in title case.
 
 # Use:
 
-# len()
-# slicing
+# strip()
+# split()
+# join()
+# replace()
 # isalpha()
-# isdigit()
-# upper()
+# istitle()
+# title()
 
-# Do not use a loop.
+# istitle() checks the current format, while title() returns a title-cased string.
+name = input("Enter your name: ").strip()
+cleaned_name = " ".join(name.split())
 
-employee_id = input("enter an employee employee_id:").upper()
+if not cleaned_name.replace(" ", "").isalpha():
+    print("Invalid name")
 
-if len(employee_id) == 7 and employee_id[:3].isalpha() == True and employee_id[-4:].isdigit() == True:
-    print("Valemployee_id employee employee_id:",employee_id)
+elif cleaned_name.istitle():
+    print("Name already formatted")
+    print("Formatted name:", cleaned_name)
+
 else:
-    print("Invalemployee_id employee_id:")
+    print("Name corrected")
+    print("Formatted name:", cleaned_name.title())
