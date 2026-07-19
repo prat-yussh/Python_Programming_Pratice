@@ -28,9 +28,20 @@
 log = input("Enter a log message:").strip().lower()
 keyword = input("Enter a keyword to search:")
 occurences = 0
+start_postion = 0 
 
-while keyword in log:
-    postion = log.find(keyword)
+while True:
+    postion = log.find(keyword,start_postion)
+    
+    if postion == -1:
+        break
+    
     print("Found at postion:",postion)
     occurences += 1
-    keyword += 1
+    start_postion = postion + 1
+
+if occurences == 0:
+    print("Not found")
+
+else:
+    print("occurences:",occurences)
