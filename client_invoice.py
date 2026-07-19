@@ -1,38 +1,36 @@
-# Q2: Email Account Validator
+# Q3: Error Log Keyword Tracker
 
-# Ask the user to enter an email address.
+# Ask the user to enter:
+
+# a log message;
+# a keyword to search.
 
 # Example:
 
-#   Pratyush123@Gmail.com
+# Log: error timeout error network error
+# Keyword: error
+
+# Print every starting index of the keyword:
+
+# Found at position: 0
+# Found at position: 14
+# Found at position: 28
+# Total occurrences: 3
 # Exact requirements
-# Remove spaces from the beginning and end.
-# Convert the complete email to lowercase.
-# The email is valid only when:
-# it contains exactly one @;
-# @ is not the first character;
-# @ is not the last character;
-# the email ends with .com.
-# When invalid, print:
-# Invalid email
-# When valid:
-# extract everything before @ as the username;
-# extract everything after @ as the domain.
-# Print:
-# Email: pratyush123@gmail.com
-# Username: pratyush123
-# Domain: gmail.com
-# Short recall note
-# count() → counts occurrences
-# find() → returns the position
-# endswith() → checks the ending
-# slicing → extracts part of a string
+# Apply .strip().lower() to both inputs.
+# Use find() inside a while loop.
+# After finding a match, continue searching from the next position.
+# Count the occurrences manually.
+# When no match exists, print:
+# Keyword not found
+# Do not use count().
 
-email = input("Enter an email address:").lower().strip()
+log = input("Enter a log message:").strip().lower()
+keyword = input("Enter a keyword to search:")
+occurences = 0
 
-if email.count("@") == 1 and email.find("@") != 0 and email.rfind("@") != len(email) - 1 and email.endswith(".com") == True:
-    print("Email:", email)
-    print("Username:",email[:email.find("@")])
-    print("Domain:",email[email.find("@")+1:])
-else:
-    print("Invalid email")
+while keyword in log:
+    postion = log.find(keyword)
+    print("Found at postion:",postion)
+    occurences += 1
+    keyword += 1
