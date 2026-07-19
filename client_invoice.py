@@ -1,32 +1,40 @@
-# Q4: Product URL Generator
+# Q5: Employee employee_id Valemployee_idator
 
-# An online shop needs to convert a product name into a clean URL name.
+# Ask the user to enter an employee employee_id.
 
-# Example input:
+# Valemployee_id format:
 
-#   Wireless   Mouse / Gaming  
-
-# Expected output:
-
-# Product URL: wireless-mouse-gaming
+# ABC1234
 # Exact requirements
-# Ask the user to enter a product name.
-# Remove spaces from the beginning and end.
-# Convert it to lowercase.
-# Replace / with a space.
-# Use split() so extra spaces are removed.
-# Join the words using -.
-# Print the final product URL.
 
-# For another example:
+# The employee employee_id is valemployee_id only when:
 
-# Input:  Apple   MacBook Pro
-# Output: apple-macbook-pro
+# it contains exactly 7 characters;
+# the first 3 characters are alphabets only;
+# the last 4 characters are digits only.
 
-# Use replace(), split(), and join().
+# Convert the first three letters to uppercase before printing.
 
-url = input("Enter product name:").lower().strip()
-url = url.replace("/"," ")
-words = url.split()
-url = "-".join(words)
-print("Product URL:", url)
+# Example 1
+# Input: abc1234
+# Valemployee_id employee employee_id: ABC1234
+# Example 2
+# Input: ab12345
+# Invalemployee_id employee employee_id
+
+# Use:
+
+# len()
+# slicing
+# isalpha()
+# isdigit()
+# upper()
+
+# Do not use a loop.
+
+employee_id = input("enter an employee employee_id:").upper()
+
+if len(employee_id) == 7 and employee_id[:3].isalpha() == True and employee_id[-4:].isdigit() == True:
+    print("Valemployee_id employee employee_id:",employee_id)
+else:
+    print("Invalemployee_id employee_id:")
