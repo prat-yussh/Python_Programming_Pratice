@@ -1,37 +1,74 @@
-# Q7: Access Code Analyzer
+# Q8: Password Character Analyzer
 
-# A system uses codes in this format:
+# Ask the user to enter a password.
 
-# A1B2C3D4
 # Exact requirements
-# Ask the user to enter an access code.
-# Remove surrounding spaces and convert it to uppercase.
-# The code is valid only when:
-# it contains exactly 8 characters;
-# characters at indexes 0, 2, 4, 6 are letters;
-# characters at indexes 1, 3, 5, 7 are digits.
-# When invalid, print:
-# Invalid access code
-# When valid, print:
-# Valid access code: A1B2C3D4
-# Letters: ABCD
-# Digits: 1234
-# Reversed code: 4D3C2B1A
 
-# Use slicing with steps:
+# Check every character and manually count:
 
-# code[::2]
-# code[1::2]
-# code[::-1]
+# uppercase letters
+# lowercase letters
+# digits
+# spaces
 
-# Do not use a loop. This practises the slice step and reverse slicing from the String chapter.
+# The password is valid only when:
 
-access_code = input("Enter the access code:").upper().strip()
+# its length is at least 8;
+# it contains at least one uppercase letter;
+# it contains at least one lowercase letter;
+# it contains at least one digit;
+# it contains no spaces.
+# Example
+# Input: Python123
 
-if len(access_code) == 8 and access_code[::2].isalpha() and access_code[1::2].isdigit():
-    print("Valid access code:",access_code)
-    print("Letters:",access_code[::2])
-    print("Digit:",access_code[1::2])
-    print("Reversed code:",access_code[::-1])
+# Uppercase letters: 1
+# Lowercase letters: 5
+# Digits: 3
+# Spaces: 0
+# Valid password
+
+# Otherwise print:
+
+# Invalid password
+
+# Use one for loop with:
+
+# isupper()
+# islower()
+# isdigit()
+# isspace()
+
+# Do not use count(). These character-checking methods are covered in the String chapter.
+
+password = input("Enter your password:")
+upper_case = 0
+lower_case = 0
+digit = 0
+spaces = 0
+
+for i in password:
+    if i.isupper():
+        upper_case += 1
+        
+        
+    elif i.islower():
+        lower_case += 1
+        
+        
+    elif i.isnumeric():
+        digit += 1
+        
+        
+    elif i.isspace():
+        spaces += 1
+        
+        
+
+if len(password) >= 8 and upper_case >= 1 and lower_case >= 1 and spaces == 0 and digit >= 1:
+    print("Uppercase letters:",upper_case)
+    print("Lowercase letters:",lower_case)
+    print("Digits:",digit)
+    print("Spaces:",spaces)
+    print("Valid password")
 else:
-    print("Invalid access code")
+    print("Invalid password")
