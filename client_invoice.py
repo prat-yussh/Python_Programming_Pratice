@@ -55,7 +55,7 @@ for i in password:
         lower_case += 1
         
         
-    elif i.isnumeric():
+    elif i.isdigit():
         digit += 1
         
         
