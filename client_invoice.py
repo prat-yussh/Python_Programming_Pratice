@@ -1,74 +1,57 @@
-# Q8: Password Character Analyzer
+# Q9: Username Order Checker
 
-# Ask the user to enter a password.
+# A website wants to arrange two usernames alphabetically.
+
+# Ask the user to enter two usernames.
 
 # Exact requirements
+# Remove spaces from both ends.
+# Convert both usernames to lowercase.
+# If either username is empty, print:
+# Invalid username
+# If both usernames are the same, print:
+# Both usernames are identical
+# Otherwise, compare them using <.
 
-# Check every character and manually count:
+# Example:
 
-# uppercase letters
-# lowercase letters
-# digits
-# spaces
+# First username: Pratyush
+# Second username: Rahul
 
-# The password is valid only when:
+# Output:
 
-# its length is at least 8;
-# it contains at least one uppercase letter;
-# it contains at least one lowercase letter;
-# it contains at least one digit;
-# it contains no spaces.
-# Example
-# Input: Python123
+# Alphabetical order:
+# pratyush
+# rahul
 
-# Uppercase letters: 1
-# Lowercase letters: 5
-# Digits: 3
-# Spaces: 0
-# Valid password
+# Another example:
 
-# Otherwise print:
+# First username: Zoya
+# Second username: Amit
 
-# Invalid password
+# Output:
 
-# Use one for loop with:
+# Alphabetical order:
+# amit
+# zoya
 
-# isupper()
-# islower()
-# isdigit()
-# isspace()
+# Use if/elif/else and string comparison. Python compares strings alphabetically character by character.
 
-# Do not use count(). These character-checking methods are covered in the String chapter.
+username_1 = input("Enter first username: ").strip().lower()
+username_2 = input("Enter second username: ").strip().lower()
 
-password = input("Enter your password:")
-upper_case = 0
-lower_case = 0
-digit = 0
-spaces = 0
+if not username_1 or not username_2:
+    print("Invalid username")
 
-for i in password:
-    if i.isupper():
-        upper_case += 1
-        
-        
-    elif i.islower():
-        lower_case += 1
-        
-        
-    elif i.isdigit():
-        digit += 1
-        
-        
-    elif i.isspace():
-        spaces += 1
-        
-        
+elif username_1 == username_2:
+    print("Both usernames are identical")
 
-if len(password) >= 8 and upper_case >= 1 and lower_case >= 1 and spaces == 0 and digit >= 1:
-    print("Uppercase letters:",upper_case)
-    print("Lowercase letters:",lower_case)
-    print("Digits:",digit)
-    print("Spaces:",spaces)
-    print("Valid password")
+elif username_1 < username_2:
+    print("Alphabetical order:")
+    print(username_1)
+    print(username_2)
+
 else:
-    print("Invalid password")
+    print("Alphabetical order:")
+    print(username_2)
+    print(username_1)
