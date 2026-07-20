@@ -1,24 +1,27 @@
-# PDF 6 — Q4: Merge Delivery Batches
+# Q5: Product Search and Count
 
 # Do exactly this:
 
-# Add all items from evening_orders to morning_orders using extend().
-# Print the combined order list.
-# Print the total number of orders using len().
-# Print evening_orders to confirm that it remains unchanged.
+# Print how many times "Mouse" appears using count().
+# Print the index of the first "Monitor" using index().
+# Check whether "Webcam" exists in the list.
+# Print either:
+# Webcam available
 
-# Expected combined list:
+# or:
 
-# ['Order-201', 'Order-202', 'Order-203', 'Order-204', 'Order-205']
+# Webcam not available
 
-# Do not use a loop, +, or repeated append().
+# Do not use a loop.
 
-# extend() adds each element of one collection to another list.
+products = ["Mouse", "Keyboard", "Mouse", "Monitor", "Mouse"]
 
-morning_orders = ["Order-201", "Order-202"]
-evening_orders = ["Order-203", "Order-204", "Order-205"]
+print("Mouse counts:",products.count("Mouse"))
+print("Mouse counts:",products.index("Monitor"))
 
-morning_orders.extend(evening_orders)
-print("All orders:",morning_orders)
-print("Total number of orders:",len(evening_orders))
-print("Evening orders:",evening_orders)
+item = "Webcam" 
+
+if item in products:
+    print("Webcam available")
+else:
+    print("Webcam not available")
