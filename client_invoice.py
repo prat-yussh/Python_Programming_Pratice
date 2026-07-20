@@ -1,23 +1,27 @@
-# Q1: Weekly Sales Correction
-
-# The values represent sales from Monday to Friday.
+# Q2: Delivery Queue Update
 
 # Do exactly this:
 
-# Print Monday’s sales using positive indexing.
-# Print Friday’s sales using negative indexing.
-# Print sales from Tuesday to Thursday using slicing.
-# Wednesday’s correct sales were 1080. Update the list using its index.
-# Print the updated complete list.
-# Print the list in reverse using slicing.
+# Add "Order-104" at the end using append().
+# An urgent order "Order-999" must be placed at index 1 using insert().
+# Print the updated queue.
+# Print the total number of orders.
 
-# Do not use a loop or any list method yet.
+# Expected list:
 
-daily_sales = [1200, 1450, 980, 1600, 1750]
+# ['Order-101', 'Order-999', 'Order-102', 'Order-103', 'Order-104']
 
-print("Monday sales:",daily_sales[0])
-print("Friday sales:",daily_sales[-1])
-print("Tuesday to Thrsday sales:",daily_sales[1:-1])
-daily_sales[3] = 1800
-print("Updated sales:",daily_sales)
-print("Updated sales:",daily_sales[::-1])
+# Use only:
+
+# append()
+# insert()
+# len()
+
+# append() adds at the end, while insert() adds at a specified index.
+
+delivery_queue = ["Order-101", "Order-102", "Order-103"]
+
+delivery_queue.append("Order-104")
+delivery_queue.insert(1,"Order-999")
+print(delivery_queue)
+print("Total number of orders:",len(delivery_queue))
