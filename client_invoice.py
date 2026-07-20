@@ -1,51 +1,23 @@
-# Q10: Report File Validator
+# Q1: Weekly Sales Correction
 
-# Ask the user to enter a file name.
+# The values represent sales from Monday to Friday.
 
-# Valid example:
+# Do exactly this:
 
-# report_july.pdf
+# Print Monday’s sales using positive indexing.
+# Print Friday’s sales using negative indexing.
+# Print sales from Tuesday to Thursday using slicing.
+# Wednesday’s correct sales were 1080. Update the list using its index.
+# Print the updated complete list.
+# Print the list in reverse using slicing.
 
-# Exact requirements
-# Remove spaces from both ends.
-# Convert the file name to lowercase.
-# The file is valid only when:
-# it starts with report_;
-# it ends with .pdf;
-# it contains no spaces;
-# something exists between report_ and .pdf.
-# When invalid, print:
-# Invalid report file
+# Do not use a loop or any list method yet.
 
-# When valid, extract the report name.
+daily_sales = [1200, 1450, 980, 1600, 1750]
 
-# Example:
-
-# File: report_july.pdf
-# Report name: july
-# Valid report file
-
-
-# Useful slicing:
-
-# file_name[7:-4]
-
-
-# Use:
-
-# startswith()
-# endswith()
-# in / not in
-# slicing
-
-
-# Do not use a loop. This covers the remaining starting/ending checks from the String chapter.
-
-file_name = input("Enter filename:").strip().lower()
-
-if file_name.startswith("report_") and file_name.endswith(".pdf") and not file_name.isspace():
-    print("File:",file_name)
-    print("Report name:",file_name[7:-4])
-    print("Valid report file")
-else:
-    print("Invalid report file")
+print("Monday sales:",daily_sales[0])
+print("Friday sales:",daily_sales[-1])
+print("Tuesday to Thrsday sales:",daily_sales[1:-1])
+daily_sales[3] = 1800
+print("Updated sales:",daily_sales)
+print("Updated sales:",daily_sales[::-1])
