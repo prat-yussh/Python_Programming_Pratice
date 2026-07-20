@@ -1,57 +1,51 @@
-# Q9: Username Order Checker
+# Q10: Report File Validator
 
-# A website wants to arrange two usernames alphabetically.
+# Ask the user to enter a file name.
 
-# Ask the user to enter two usernames.
+# Valid example:
+
+# report_july.pdf
 
 # Exact requirements
 # Remove spaces from both ends.
-# Convert both usernames to lowercase.
-# If either username is empty, print:
-# Invalid username
-# If both usernames are the same, print:
-# Both usernames are identical
-# Otherwise, compare them using <.
+# Convert the file name to lowercase.
+# The file is valid only when:
+# it starts with report_;
+# it ends with .pdf;
+# it contains no spaces;
+# something exists between report_ and .pdf.
+# When invalid, print:
+# Invalid report file
+
+# When valid, extract the report name.
 
 # Example:
 
-# First username: Pratyush
-# Second username: Rahul
+# File: report_july.pdf
+# Report name: july
+# Valid report file
 
-# Output:
 
-# Alphabetical order:
-# pratyush
-# rahul
+# Useful slicing:
 
-# Another example:
+# file_name[7:-4]
 
-# First username: Zoya
-# Second username: Amit
 
-# Output:
+# Use:
 
-# Alphabetical order:
-# amit
-# zoya
+# startswith()
+# endswith()
+# in / not in
+# slicing
 
-# Use if/elif/else and string comparison. Python compares strings alphabetically character by character.
 
-username_1 = input("Enter first username: ").strip().lower()
-username_2 = input("Enter second username: ").strip().lower()
+# Do not use a loop. This covers the remaining starting/ending checks from the String chapter.
 
-if not username_1 or not username_2:
-    print("Invalid username")
+file_name = input("Enter filename:").strip().lower()
 
-elif username_1 == username_2:
-    print("Both usernames are identical")
-
-elif username_1 < username_2:
-    print("Alphabetical order:")
-    print(username_1)
-    print(username_2)
-
+if file_name.startswith("report_") and file_name.endswith(".pdf") and not file_name.isspace():
+    print("File:",file_name)
+    print("Report name:",file_name[7:-4])
+    print("Valid report file")
 else:
-    print("Alphabetical order:")
-    print(username_2)
-    print(username_1)
+    print("Invalid report file")
