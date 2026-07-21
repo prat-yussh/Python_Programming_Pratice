@@ -1,16 +1,27 @@
-# Q6: Sort and Reverse Scores
+# Q7: Backup List and Aliasing
 
 # Do exactly this:
 
-# Sort the list in ascending order using sort().
-# Print the sorted list.
-# Reverse the same list using reverse().
-# Print the descending list.
+# Create alias_prices using:
+# alias_prices = original_prices
+# Change the first value of alias_prices to 150.
+# Print both lists.
+# Create an independent copy named backup_prices using copy().
+# Change the second value of backup_prices to 275.
+# Print original_prices and backup_prices.
 
-# Do not use sorted() or slicing.
+# Observe which change affects both lists and which does not. This practises list aliasing and cloning.
 
-scores = [78, 92, 65, 88, 71]
-scores.sort()
-print(scores)
-scores.reverse()
-print(scores)
+original_prices = [120, 250, 300]
+
+alias_prices = original_prices
+alias_prices[0] = 150
+
+print("Original:", original_prices)
+print("Alias:", alias_prices)
+
+backup_prices = original_prices.copy()
+backup_prices[1] = 275
+
+print("Original:", original_prices)
+print("Backup:", backup_prices)
