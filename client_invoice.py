@@ -1,27 +1,35 @@
-# Q7: Backup List and Aliasing
+# Q8: Department Sales Matrix
+
+# Each inner list represents one department:
+
+# Index 0 → Electronics
+# Index 1 → Clothing
+# Index 2 → Grocery
+
+# Each value represents sales for Monday, Tuesday, and Wednesday.
 
 # Do exactly this:
 
-# Create alias_prices using:
-# alias_prices = original_prices
-# Change the first value of alias_prices to 150.
-# Print both lists.
-# Create an independent copy named backup_prices using copy().
-# Change the second value of backup_prices to 275.
-# Print original_prices and backup_prices.
+# Print Clothing’s Tuesday sales using nested indexing.
+# Change Grocery’s Monday sales from 2000 to 2100.
+# Print the complete Grocery sales list.
+# Use nested for loops to print the matrix like this:
+# 1200 1500 1800
+# 900 1100 1300
+# 2100 2200 2500
 
-# Observe which change affects both lists and which does not. This practises list aliasing and cloning.
+# Do not use sum() or any list method. Nested lists represent table-like or matrix data.
 
-original_prices = [120, 250, 300]
+sales = [
+    [1200, 1500, 1800],
+    [900, 1100, 1300],
+    [2000, 2200, 2500]
+]
 
-alias_prices = original_prices
-alias_prices[0] = 150
-
-print("Original:", original_prices)
-print("Alias:", alias_prices)
-
-backup_prices = original_prices.copy()
-backup_prices[1] = 275
-
-print("Original:", original_prices)
-print("Backup:", backup_prices)
+print("Clothing tuesday:",sales[1][1])
+sales[2][0] = 2100 
+print("Grocery:",sales[2])
+for row in sales:
+    for amount in row:
+        print(amount, end=" ")
+    print()
