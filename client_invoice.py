@@ -1,25 +1,28 @@
-# Q12: Create Stock Statuses
+# Q13: Filter and Discount Expensive Products
 
-# Create a new list named stock_status.
+# Create a new list named discounted_expensive_prices.
 
-# For each value:
+# Rules:
 
-# If the stock is 0, add "Out of stock".
-# Otherwise, add "Available".
+# Select only prices greater than or equal to 1000.
+# Give those selected prices a 10% discount.
+# Do not include prices below 1000.
 
-# Expected result:
+# Formula:
 
-# Stock status: ['Out of stock', 'Available', 'Available', 'Out of stock', 'Available']
+# Discounted price = price - (price × 10 / 100)
 
-# Use one list comprehension with if-else.
+# Expected output:
 
-# Structure:
+# Discounted expensive prices: [1080.0, 1800.0, 1350.0]
 
-# [value_if_true if condition else value_if_false for item in list_name]
+# Use one list comprehension:
 
-# Do not use a normal loop or append().
+# [expression for item in list_name if condition]
+# Do not use a normal loop or append(). This combines transformation and filtering.
 
-product_stock = [0, 12, 5, 0, 8]
+prices = [500, 1200, 800, 2000, 1500]
+discounted_expensive_prices = [item for item in prices if item >= 1000]
 
-stock_status = ["Available" if product == 0 else "Out of stock" for product in product_stock]
-print(stock_status)
+discounted_price = [item - (item * 10 / 100) for item in discounted_expensive_prices]
+print(discounted_price)
