@@ -1,26 +1,25 @@
-# Q11: Find Common Products
+# Q12: Create Stock Statuses
 
-# Create a new list named common_products containing only products present in both lists.
+# Create a new list named stock_status.
 
-# Expected output:
+# For each value:
 
-# Common products: ['Monitor', 'Webcam']
-# Number of common products: 2
+# If the stock is 0, add "Out of stock".
+# Otherwise, add "Available".
 
-# Requirements:
+# Expected result:
 
-# Use one list comprehension.
-# Use the in operator inside it.
+# Stock status: ['Out of stock', 'Available', 'Available', 'Out of stock', 'Available']
+
+# Use one list comprehension with if-else.
+
+# Structure:
+
+# [value_if_true if condition else value_if_false for item in list_name]
+
 # Do not use a normal loop or append().
-# Do not modify either original list.
 
-# Structure to remember:
+product_stock = [0, 12, 5, 0, 8]
 
-# [value for value in first_list if value in second_list]
-
-# This type of common-element filtering is included in the List chapter.
-
-store_a = ["Mouse", "Keyboard", "Monitor", "Webcam"]
-store_b = ["Monitor", "Webcam", "Printer"]
-
-common_products = [store_a for store_b in store_a if store_a in store_b]
+stock_status = ["Available" if product == 0 else "Out of stock" for product in product_stock]
+print(stock_status)
