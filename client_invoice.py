@@ -1,11 +1,9 @@
 # PDF 6 — Q10: Apply Product Discount
-# prices = [500, 1200, 800, 2000]
 
 # Create a new list named discounted_prices.
 
 # Each price receives a 10% discount:
 
-# Discounted price = price - (price × 10 / 100)
 
 # Expected result:
 
@@ -17,3 +15,13 @@
 # Do not modify prices.
 # Do not use a normal loop or append().
 # Print both the original and discounted lists.
+
+prices = [500, 1200, 800, 2000]
+
+discounted_prices = [
+    price - (price * 10 / 100)
+    for price in prices
+]
+
+print("Original prices:", prices)
+print("Discounted prices:", discounted_prices)
