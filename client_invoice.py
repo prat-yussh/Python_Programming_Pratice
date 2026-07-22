@@ -22,7 +22,6 @@
 # Do not use a normal loop or append(). This combines transformation and filtering.
 
 prices = [500, 1200, 800, 2000, 1500]
-discounted_expensive_prices = [item for item in prices if item >= 1000]
+discounted_expensive_prices = [item - (item * 10 / 100) for item in prices if item >= 1000]
 
-discounted_price = [item - (item * 10 / 100) for item in discounted_expensive_prices]
-print(discounted_price)
+print(discounted_expensive_prices)
