@@ -1,27 +1,26 @@
-# PDF 6 — Q10: Apply Product Discount
+# Q11: Find Common Products
 
-# Create a new list named discounted_prices.
+# Create a new list named common_products containing only products present in both lists.
 
-# Each price receives a 10% discount:
+# Expected output:
 
-
-# Expected result:
-
-# Discounted prices: [450.0, 1080.0, 720.0, 1800.0]
+# Common products: ['Monitor', 'Webcam']
+# Number of common products: 2
 
 # Requirements:
 
 # Use one list comprehension.
-# Do not modify prices.
+# Use the in operator inside it.
 # Do not use a normal loop or append().
-# Print both the original and discounted lists.
+# Do not modify either original list.
 
-prices = [500, 1200, 800, 2000]
+# Structure to remember:
 
-discounted_prices = [
-    price - (price * 10 / 100)
-    for price in prices
-]
+# [value for value in first_list if value in second_list]
 
-print("Original prices:", prices)
-print("Discounted prices:", discounted_prices)
+# This type of common-element filtering is included in the List chapter.
+
+store_a = ["Mouse", "Keyboard", "Monitor", "Webcam"]
+store_b = ["Monitor", "Webcam", "Printer"]
+
+common_products = [store_a for store_b in store_a if store_a in store_b]
