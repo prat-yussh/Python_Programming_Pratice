@@ -1,23 +1,28 @@
-# Q15: Clear Completed Notifications
+# Final Question: Available Inventory
 
-# Do exactly this:
+# The product and its stock share the same index:
 
-# Create an independent backup named notification_backup using copy().
-# Remove every item from notifications using clear().
-# Print both lists.
+# Mouse → 5
+# Keyboard → 0
+# Monitor → 3
+# Webcam → 0
+
+# Create a list named available_products containing only products whose stock is greater than 0.
 
 # Expected output:
 
-# Notifications: []
-# Backup: ['Payment received', 'Order shipped', 'Login detected']
+# Available products: ['Mouse', 'Monitor']
+# Available product count: 2
 
-# Do not write a loop or create another list manually.
+# Use one list comprehension with indexes:
 
-notifications = ["Payment received", "Order shipped", "Login detected"]
+# products[i] for i in range(len(products))
 
-notification_backup = notifications.copy()
+# Do not use a normal loop or append().
 
-notifications.clear()
+products = ["Mouse", "Keyboard", "Monitor", "Webcam"]
+stock = [5, 0, 3, 0]
 
-print(notifications)
-print(notification_backup)
+available_products = [products[i] for i in range(len(products)) if stock[i] > 0]
+print("Available products:",available_products)
+print("Available product count:",len(available_products))
