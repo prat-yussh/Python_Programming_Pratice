@@ -1,27 +1,35 @@
-# Q13: Filter and Discount Expensive Products
+# Q14: Combine and Repeat Task Lists
 
-# Create a new list named discounted_expensive_prices.
+# Do exactly this:
 
-# Rules:
+# Combine morning_tasks and evening_tasks using +.
+# Store the result in daily_tasks.
+# Print daily_tasks.
+# Compare daily_tasks with expected_tasks using ==.
+# Print:
+# Task order correct
 
-# Select only prices greater than or equal to 1000.
-# Give those selected prices a 10% discount.
-# Do not include prices below 1000.
+# or:
 
-# Formula:
+# Task order incorrect
+# Create two_day_tasks by repeating daily_tasks two times using *.
+# Print two_day_tasks.
 
-# Discounted price = price - (price × 10 / 100)
+# Do not use a loop or list methods.
 
-# Expected output:
+# Lists support + for concatenation and * for repetition. List equality checks the values and their order.
 
-# Discounted expensive prices: [1080.0, 1800.0, 1350.0]
+morning_tasks = ["Email", "Meeting"]
+evening_tasks = ["Report", "Backup"]
+expected_tasks = ["Email", "Meeting", "Report", "Backup"]
 
-# Use one list comprehension:
+daily_tasks = morning_tasks + evening_tasks
+print(daily_tasks)
+if daily_tasks == expected_tasks:
+    print("TAsk order correct")
+else:
+    print("TAsk order incorrect")
 
-# [expression for item in list_name if condition]
-# Do not use a normal loop or append(). This combines transformation and filtering.
 
-prices = [500, 1200, 800, 2000, 1500]
-discounted_expensive_prices = [item - (item * 10 / 100) for item in prices if item >= 1000]
-
-print(discounted_expensive_prices)
+two_day_task = daily_tasks * 2
+print(two_day_task)
