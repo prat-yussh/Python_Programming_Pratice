@@ -25,9 +25,10 @@ employee_id = "EMP-101"
 employee_name = "Asha"
 department = "IT"
 
-employee_record = tuple((employee_id,employee_name,department))
-
+employee_record = employee_id, employee_name, department
 print(employee_record)
-print(type(employee_record))
-
 saved_id, saved_name, saved_department = employee_record
+
+print(saved_id)
+print(saved_name)
+print(saved_department)
