@@ -1,28 +1,34 @@
-# Final Question: Available Inventory
+# Q1: Delivery Location Record
 
-# The product and its stock share the same index:
+# A delivery location is stored as a tuple because its values should remain fixed:
 
-# Mouse → 5
-# Keyboard → 0
-# Monitor → 3
-# Webcam → 0
 
-# Create a list named available_products containing only products whose stock is greater than 0.
+# Do exactly this:
 
-# Expected output:
+# Print the city using indexing.
+# Print the latitude using indexing.
+# Print the longitude using negative indexing.
+# Unpack the tuple into:
+# city, latitude, longitude
+# Print all three unpacked variables.
+# Print the tuple’s length.
+# Print its data type.
 
-# Available products: ['Mouse', 'Monitor']
-# Available product count: 2
+# Use only indexing, unpacking, len() and type().
 
-# Use one list comprehension with indexes:
+# Tuples preserve order and support indexing like lists, but tuples are immutable.
 
-# products[i] for i in range(len(products))
+location = ("Bhubaneswar", 20.2961, 85.8245)
 
-# Do not use a normal loop or append().
+print("City:", location[0])
+print("Latitude:", location[1])
+print("Longitude:", location[-1])
 
-products = ["Mouse", "Keyboard", "Monitor", "Webcam"]
-stock = [5, 0, 3, 0]
+city, latitude, longitude = location
 
-available_products = [products[i] for i in range(len(products)) if stock[i] > 0]
-print("Available products:",available_products)
-print("Available product count:",len(available_products))
+print(city)
+print(latitude)
+print(longitude)
+
+print("Length:", len(location))
+print("Type:", type(location))
