@@ -1,25 +1,21 @@
-# Q3: Tuple Search
+# Q4: Combine and Repeat Fixed Schedules
 
 # Do exactly this:
 
-# Print how many times "IT" appears using count().
-# Print the index of the first "Finance" using index().
-# Check whether "Marketing" exists in the tuple.
-# Print either:
-# Marketing available
+# Combine both tuples using +.
+# Store the result in daily_schedule.
+# Print daily_schedule.
+# Create two_day_schedule by repeating daily_schedule twice using *.
+# Print two_day_schedule.
+# Try to understand why this is invalid, but do not include it in your final running code:
 
-# or:
+# Tuples support concatenation and repetition, but their existing elements cannot be changed because tuples are immutable.
 
-# Marketing not available
+morning_schedule = ("Login", "Team meeting")
+evening_schedule = ("Report", "Logout")
 
-# Do not use a loop.
-
-departments = ("Sales", "HR", "IT", "Finance", "IT")
-
-print("IT count:", departments.count("IT"))
-print("Finance index:", departments.index("Finance"))
-
-if "Marketing" in departments:
-    print("Marketing available")
-else:
-    print("Marketing not available")
+daily_schedule = morning_schedule + evening_schedule
+print(daily_schedule)
+two_day_schedule = daily_schedule * 2
+print(two_day_schedule)
+daily_schedule[0] = "Start"
