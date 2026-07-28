@@ -1,34 +1,31 @@
-# Q1: Delivery Location Record
+# Q2: Single-Value Tuple
 
-# A delivery location is stored as a tuple because its values should remain fixed:
+# A system stores one fixed administrator ID:
 
+# ADMIN-101
 
-# Do exactly this:
+# Create a tuple named admin_record containing only this one value.
 
-# Print the city using indexing.
-# Print the latitude using indexing.
-# Print the longitude using negative indexing.
-# Unpack the tuple into:
-# city, latitude, longitude
-# Print all three unpacked variables.
-# Print the tuple’s length.
-# Print its data type.
+# Then print:
 
-# Use only indexing, unpacking, len() and type().
+# Admin record:
+# Length:
+# Type:
+# Important new rule
 
-# Tuples preserve order and support indexing like lists, but tuples are immutable.
+# A single-value tuple must contain a comma:
 
-location = ("Bhubaneswar", 20.2961, 85.8245)
+# value = ("ADMIN-101",)
 
-print("City:", location[0])
-print("Latitude:", location[1])
-print("Longitude:", location[-1])
+# Without the comma:
 
-city, latitude, longitude = location
+# value = ("ADMIN-101")
 
-print(city)
-print(latitude)
-print(longitude)
+# Python treats it as a normal string, not a tuple.
 
-print("Length:", len(location))
-print("Type:", type(location))
+# Write the complete code.
+
+admin_record = ("ADMIN-101",)
+
+print(len(admin_record))
+print(type(admin_record))
