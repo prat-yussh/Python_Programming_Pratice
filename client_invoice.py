@@ -1,34 +1,30 @@
-# Q7: Employee Record Packing and Unpacking
+# Q8: Calculate Tuple Total and Average
 
 # Do exactly this:
 
-# Pack all three variables into a tuple named employee_record without writing the values again.
-# Print employee_record.
-# Print its type.
-# Unpack it into:
-# saved_id, saved_name, saved_department
-# Print all three unpacked variables.
+# Create total_sales = 0.
+# Use a for loop to add every value manually.
+# Calculate:
+# Average = total sales / number of values
+# Print:
+# Total sales: 5600
+# Average sales: 1400.0
 
-# Expected tuple:
+# Rules:
 
-# ('EMP-101', 'Asha', 'IT')
+# Do not use sum().
+# Use len() when calculating the average.
+# Do not convert the tuple into a list.
 
-# Remember:
+# This is the practical tuple program included near the end of the chapter.
 
-# employee_record = employee_id, employee_name, department  # packing
+monthly_sales = (1200, 1500, 1100, 1800)
+total_sales = 0
 
-# saved_id, saved_name, saved_department = employee_record  # unpacking
+for sale in monthly_sales:
+    total_sales += sale
 
-# During unpacking, the number of variables must equal the number of tuple values.
+average_sales = total_sales / len(monthly_sales)
 
-employee_id = "EMP-101"
-employee_name = "Asha"
-department = "IT"
-
-employee_record = employee_id, employee_name, department
-print(employee_record)
-saved_id, saved_name, saved_department = employee_record
-
-print(saved_id)
-print(saved_name)
-print(saved_department)
+print("Total sales:", total_sales)
+print("Average sales:", average_sales)
