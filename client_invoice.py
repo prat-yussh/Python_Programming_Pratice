@@ -1,21 +1,31 @@
-# Q4: Combine and Repeat Fixed Schedules
+# Q5: Update a Fixed Permission Record
+
+# The last permission must be changed from "Download" to "Upload".
 
 # Do exactly this:
 
-# Combine both tuples using +.
-# Store the result in daily_schedule.
-# Print daily_schedule.
-# Create two_day_schedule by repeating daily_schedule twice using *.
-# Print two_day_schedule.
-# Try to understand why this is invalid, but do not include it in your final running code:
+# Print the original tuple.
+# Convert the tuple into a list using list().
+# Change the value at index 2 to "Upload".
+# Convert the list back into a tuple using tuple().
+# Print the updated tuple.
+# Print its data type.
 
-# Tuples support concatenation and repetition, but their existing elements cannot be changed because tuples are immutable.
+# Expected result:
 
-morning_schedule = ("Login", "Team meeting")
-evening_schedule = ("Report", "Logout")
+# Original permissions: ('Read', 'Write', 'Download')
+# Updated permissions: ('Read', 'Write', 'Upload')
+# Type: <class 'tuple'>
 
-daily_schedule = morning_schedule + evening_schedule
-print(daily_schedule)
-two_day_schedule = daily_schedule * 2
-print(two_day_schedule)
-daily_schedule[0] = "Start"
+# Do not create the updated tuple manually.
+
+permissions = ("Read", "Write", "Download")
+
+print("Original permissions:", permissions)
+
+permissions = list(permissions)
+permissions[2] = "Upload"
+permissions = tuple(permissions)
+
+print("Updated permissions:", permissions)
+print("Type:", type(permissions))
