@@ -1,35 +1,23 @@
-# Q14: Combine and Repeat Task Lists
+# Q15: Clear Completed Notifications
 
 # Do exactly this:
 
-# Combine morning_tasks and evening_tasks using +.
-# Store the result in daily_tasks.
-# Print daily_tasks.
-# Compare daily_tasks with expected_tasks using ==.
-# Print:
-# Task order correct
+# Create an independent backup named notification_backup using copy().
+# Remove every item from notifications using clear().
+# Print both lists.
 
-# or:
+# Expected output:
 
-# Task order incorrect
-# Create two_day_tasks by repeating daily_tasks two times using *.
-# Print two_day_tasks.
+# Notifications: []
+# Backup: ['Payment received', 'Order shipped', 'Login detected']
 
-# Do not use a loop or list methods.
+# Do not write a loop or create another list manually.
 
-# Lists support + for concatenation and * for repetition. List equality checks the values and their order.
+notifications = ["Payment received", "Order shipped", "Login detected"]
 
-morning_tasks = ["Email", "Meeting"]
-evening_tasks = ["Report", "Backup"]
-expected_tasks = ["Email", "Meeting", "Report", "Backup"]
+notification_backup = notifications.copy()
 
-daily_tasks = morning_tasks + evening_tasks
-print(daily_tasks)
-if daily_tasks == expected_tasks:
-    print("TAsk order correct")
-else:
-    print("TAsk order incorrect")
+notifications.clear()
 
-
-two_day_task = daily_tasks * 2
-print(two_day_task)
+print(notifications)
+print(notification_backup)
