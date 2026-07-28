@@ -1,31 +1,25 @@
-# Q2: Single-Value Tuple
+# Q3: Tuple Search
 
-# A system stores one fixed administrator ID:
+# Do exactly this:
 
-# ADMIN-101
+# Print how many times "IT" appears using count().
+# Print the index of the first "Finance" using index().
+# Check whether "Marketing" exists in the tuple.
+# Print either:
+# Marketing available
 
-# Create a tuple named admin_record containing only this one value.
+# or:
 
-# Then print:
+# Marketing not available
 
-# Admin record:
-# Length:
-# Type:
-# Important new rule
+# Do not use a loop.
 
-# A single-value tuple must contain a comma:
+departments = ("Sales", "HR", "IT", "Finance", "IT")
 
-# value = ("ADMIN-101",)
+print("IT count:", departments.count("IT"))
+print("Finance index:", departments.index("Finance"))
 
-# Without the comma:
-
-# value = ("ADMIN-101")
-
-# Python treats it as a normal string, not a tuple.
-
-# Write the complete code.
-
-admin_record = ("ADMIN-101",)
-
-print(len(admin_record))
-print(type(admin_record))
+if "Marketing" in departments:
+    print("Marketing available")
+else:
+    print("Marketing not available")
