@@ -1,31 +1,33 @@
-# Q5: Update a Fixed Permission Record
-
-# The last permission must be changed from "Download" to "Upload".
+# Q6: Analyze Fixed Delivery Times
 
 # Do exactly this:
 
-# Print the original tuple.
-# Convert the tuple into a list using list().
-# Change the value at index 2 to "Upload".
-# Convert the list back into a tuple using tuple().
-# Print the updated tuple.
-# Print its data type.
+# Print the shortest delivery time using min().
+# Print the longest delivery time using max().
+# Sort the tuple in ascending order using sorted().
+# Store the result in sorted_times.
+# Print sorted_times.
+# Print the type of sorted_times.
+# Print the original delivery_times to confirm it remains unchanged.
 
-# Expected result:
+# Important:
 
-# Original permissions: ('Read', 'Write', 'Download')
-# Updated permissions: ('Read', 'Write', 'Upload')
-# Type: <class 'tuple'>
+# sorted(tuple_name)
 
-# Do not create the updated tuple manually.
+# returns a list, not a tuple, because the original tuple cannot be modified.
 
-permissions = ("Read", "Write", "Download")
+# Expected main results:
 
-print("Original permissions:", permissions)
+# Shortest time: 28
+# Longest time: 50
+# Sorted times: [28, 35, 40, 42, 50]
+# Type: <class 'list'>
 
-permissions = list(permissions)
-permissions[2] = "Upload"
-permissions = tuple(permissions)
+delivery_times = (42, 35, 50, 28, 40)
 
-print("Updated permissions:", permissions)
-print("Type:", type(permissions))
+sorted_times = sorted(delivery_times)
+
+print("Shortest time:",min(delivery_times))
+print("Longest time:",max(delivery_times))
+print("Sorted times:",sorted_times)
+print("Type",type(sorted_times))
