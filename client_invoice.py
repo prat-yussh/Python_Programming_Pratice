@@ -1,33 +1,33 @@
-# Q6: Analyze Fixed Delivery Times
+# Q7: Employee Record Packing and Unpacking
 
 # Do exactly this:
 
-# Print the shortest delivery time using min().
-# Print the longest delivery time using max().
-# Sort the tuple in ascending order using sorted().
-# Store the result in sorted_times.
-# Print sorted_times.
-# Print the type of sorted_times.
-# Print the original delivery_times to confirm it remains unchanged.
+# Pack all three variables into a tuple named employee_record without writing the values again.
+# Print employee_record.
+# Print its type.
+# Unpack it into:
+# saved_id, saved_name, saved_department
+# Print all three unpacked variables.
 
-# Important:
+# Expected tuple:
 
-# sorted(tuple_name)
+# ('EMP-101', 'Asha', 'IT')
 
-# returns a list, not a tuple, because the original tuple cannot be modified.
+# Remember:
 
-# Expected main results:
+# employee_record = employee_id, employee_name, department  # packing
 
-# Shortest time: 28
-# Longest time: 50
-# Sorted times: [28, 35, 40, 42, 50]
-# Type: <class 'list'>
+# saved_id, saved_name, saved_department = employee_record  # unpacking
 
-delivery_times = (42, 35, 50, 28, 40)
+# During unpacking, the number of variables must equal the number of tuple values.
 
-sorted_times = sorted(delivery_times)
+employee_id = "EMP-101"
+employee_name = "Asha"
+department = "IT"
 
-print("Shortest time:",min(delivery_times))
-print("Longest time:",max(delivery_times))
-print("Sorted times:",sorted_times)
-print("Type",type(sorted_times))
+employee_record = tuple((employee_id,employee_name,department))
+
+print(employee_record)
+print(type(employee_record))
+
+saved_id, saved_name, saved_department = employee_record
