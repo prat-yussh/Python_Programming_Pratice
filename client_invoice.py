@@ -1,30 +1,39 @@
-# Q8: Calculate Tuple Total and Average
+# Set Data Structure: Q1
+
+# A website records visitor IDs, but some visitors appear more than once:
 
 # Do exactly this:
 
-# Create total_sales = 0.
-# Use a for loop to add every value manually.
-# Calculate:
-# Average = total sales / number of values
-# Print:
-# Total sales: 5600
-# Average sales: 1400.0
+# Convert visitor_ids into a set named unique_visitors.
+# Print the original number of entries.
+# Print the number of unique visitors.
+# Print unique_visitors.
+# Check whether "V104" exists in the set.
+# Print either:
+# V104 visited
 
-# Rules:
+# or:
 
-# Do not use sum().
-# Use len() when calculating the average.
-# Do not convert the tuple into a list.
+# V104 did not visit
 
-# This is the practical tuple program included near the end of the chapter.
+# Use only:
 
-monthly_sales = (1200, 1500, 1100, 1800)
-total_sales = 0
+# set()
+# len()
+# in
 
-for sale in monthly_sales:
-    total_sales += sale
+# Do not use a loop.
 
-average_sales = total_sales / len(monthly_sales)
+# A set removes duplicate values automatically and does not support indexing. The displayed order may differ because sets do not preserve positional order.
 
-print("Total sales:", total_sales)
-print("Average sales:", average_sales)
+visitor_ids = ["V101", "V102", "V101", "V103", "V102"]
+unique_visitors = set(visitor_ids)
+
+print("original number",visitor_ids)
+print("number of unique visitors",len(unique_visitors))
+print("number of unique visitors",unique_visitors)
+
+if "V104" in unique_visitors:
+    print("V104 visited")
+else:
+    print("V104 did not visit")
