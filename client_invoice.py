@@ -1,22 +1,30 @@
-# Q2: Add and Remove Products
+# Q3: Safe Product Removal
 
 # Do exactly this:
 
-# Add "Webcam" to the set.
-# Remove "Keyboard" from the set.
-# Print the updated set.
+# Remove "Keyboard" using discard().
+# Try to remove "Webcam" using discard().
+# Print the final set.
 # Print the total number of products.
+# New concept
 
-# Use only:
+# discard() is safer than remove().
 
-# add()
-# remove()
+# products.remove("Webcam")   # ❌ Error if Webcam doesn't exist
+
+# products.discard("Webcam")  # ✅ No error, nothing happens
+
+# Use:
+
+# discard()
 # len()
 
 # Do not use a loop.
 
+# This question teaches the difference between remove() and discard(), which is one of the most important set methods.
+
 products = {"Mouse", "Keyboard", "Monitor"}
-products.add("Webcam")
-products.remove("Keyboard")
+products.discard("Keyboard")
+products.discard("Webcam")
 print(products)
 print(len(products))
