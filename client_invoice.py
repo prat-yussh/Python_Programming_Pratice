@@ -1,36 +1,39 @@
-# Dictionary Q2 (Combined)
+# Dictionary Q3 (Combined)
 
 # Do all of these:
 
-# Print all keys.
-# Print all values.
-# Print all key-value pairs.
-# Check whether the key "email" exists.
-# If it exists, print "Email available".
-# Otherwise, print "Email not available".
+# Remove "Monitor" using pop().
+# Store the removed value in a variable named removed_stock.
+# Print:
+# Removed stock: 5
+# Increase "Keyboard" stock by 5.
 # Add:
-# "email": "asha@company.com"
+# "Speaker": 10
 # Print the updated dictionary.
-# New methods you'll practice
-# employee.keys()
-# employee.values()
-# employee.items()
+# Print the total number of products.
 
-employee = {
-    "id": "EMP101",
-    "name": "Asha",
-    "department": "IT",
-    "salary": 45000
+# This single question practices:
+
+# pop()
+# Updating an existing value
+# Adding a new key
+# len()
+
+# This is very close to how dictionaries are used in inventory systems.
+
+inventory = {
+    "Mouse": 15,
+    "Keyboard": 8,
+    "Monitor": 5,
+    "Webcam": 12
 }
 
-print(employee.keys())
-print(employee.values())
-print(employee.items())
+removed_stock = inventory.pop("Monitor")
+print(removed_stock)
+print(inventory)
 
-if "email" in employee.keys():
-    print("Email available")
-else:
-    print("Email not available")
+inventory["Keyboard"] += 5
+inventory["Speaker"] = 10
 
-employee["email"] = "asha@company.com"
-print(employee)
+print(inventory)
+print(len(inventory))
