@@ -1,35 +1,36 @@
-# Dictionary Q1 (Combined)
+# Dictionary Q2 (Combined)
 
 # Do all of these:
 
-# Print the student's name.
-# Print the student's CGPA.
-# Change the CGPA to 8.4.
-# Add a new key:
-# "college": "Centurion University"
-# Print the complete dictionary.
-# Print the total number of key-value pairs using len().
+# Print all keys.
+# Print all values.
+# Print all key-value pairs.
+# Check whether the key "email" exists.
+# If it exists, print "Email available".
+# Otherwise, print "Email not available".
+# Add:
+# "email": "asha@company.com"
+# Print the updated dictionary.
+# New methods you'll practice
+# employee.keys()
+# employee.values()
+# employee.items()
 
-# This single question covers:
-
-# Accessing values
-# Updating values
-# Adding new keys
-# Printing the dictionary
-# Using len()
-
-student = {
-    "name": "Pratyush",
-    "branch": "CSE",
-    "semester": 7,
-    "cgpa": 8.1
+employee = {
+    "id": "EMP101",
+    "name": "Asha",
+    "department": "IT",
+    "salary": 45000
 }
 
-print("Students name:",student["name"])
-print("Students CGPA:",student["cgpa"])
+print(employee.keys())
+print(employee.values())
+print(employee.items())
 
-student["cgpa"] = 8.4
-student["college"] = "Centurion University"
+if "email" in employee.keys():
+    print("Email available")
+else:
+    print("Email not available")
 
-print(student)
-print(len(student))
+employee["email"] = "asha@company.com"
+print(employee)
