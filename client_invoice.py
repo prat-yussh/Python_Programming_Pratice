@@ -1,27 +1,38 @@
-# Q8: Check Customer Membership
+# Q10: Remove Duplicate Course Names
 
 # Do exactly this:
 
-# Ask the user to enter a customer name.
-# If the customer is in premium_customers, print:
-# Premium customer
-
-# Otherwise print:
-
-# Regular customer
+# Convert the list into a set named unique_courses.
+# Print unique_courses.
+# Convert the set back into a list named course_list.
+# Print course_list.
+# Print the total number of unique courses.
 
 # Use only:
 
-# input()
-# in
-# if...else
+# set()
+# list()
+# len()
 
 # Do not use a loop.
 
-premium_customers = {"Asha", "Rahul", "Pratyush"}
-name = input("Enter a customer name:")
+# Important
 
-if name in premium_customers:
-    print("Premium customers")
-else:
-    print("Regular customers")
+# The order of course_list may be different from the original because sets do not preserve order.
+
+# This question teaches one of the most common real-world uses of sets: removing duplicates from a list.
+
+courses = [
+    "Python",
+    "Java",
+    "Python",
+    "C++",
+    "Java",
+    "SQL"
+]
+
+unique_courses = set(courses)
+print(unique_courses)
+course_list = list(unique_courses)
+print(course_list)
+print(len(course_list))
