@@ -1,38 +1,35 @@
-# Q10: Remove Duplicate Course Names
+# Dictionary Q1 (Combined)
 
-# Do exactly this:
+# Do all of these:
 
-# Convert the list into a set named unique_courses.
-# Print unique_courses.
-# Convert the set back into a list named course_list.
-# Print course_list.
-# Print the total number of unique courses.
+# Print the student's name.
+# Print the student's CGPA.
+# Change the CGPA to 8.4.
+# Add a new key:
+# "college": "Centurion University"
+# Print the complete dictionary.
+# Print the total number of key-value pairs using len().
 
-# Use only:
+# This single question covers:
 
-# set()
-# list()
-# len()
+# Accessing values
+# Updating values
+# Adding new keys
+# Printing the dictionary
+# Using len()
 
-# Do not use a loop.
+student = {
+    "name": "Pratyush",
+    "branch": "CSE",
+    "semester": 7,
+    "cgpa": 8.1
+}
 
-# Important
+print("Students name:",student["name"])
+print("Students CGPA:",student["cgpa"])
 
-# The order of course_list may be different from the original because sets do not preserve order.
+student["cgpa"] = 8.4
+student["college"] = "Centurion University"
 
-# This question teaches one of the most common real-world uses of sets: removing duplicates from a list.
-
-courses = [
-    "Python",
-    "Java",
-    "Python",
-    "C++",
-    "Java",
-    "SQL"
-]
-
-unique_courses = set(courses)
-print(unique_courses)
-course_list = list(unique_courses)
-print(course_list)
-print(len(course_list))
+print(student)
+print(len(student))
