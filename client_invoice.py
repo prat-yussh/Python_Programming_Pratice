@@ -1,28 +1,27 @@
-# Q7: Customers Visiting Only One Store
+# Q8: Check Customer Membership
 
 # Do exactly this:
 
-# Find customers who visited only one of the stores using symmetric_difference().
-# Store the result in unique_customers.
-# Print unique_customers.
-# Print the total number of unique customers.
+# Ask the user to enter a customer name.
+# If the customer is in premium_customers, print:
+# Premium customer
+
+# Otherwise print:
+
+# Regular customer
 
 # Use only:
 
-# symmetric_difference()
-# len()
+# input()
+# in
+# if...else
 
 # Do not use a loop.
 
-# 💡 Before coding, think:
+premium_customers = {"Asha", "Rahul", "Pratyush"}
+name = input("Enter a customer name:")
 
-# Rahul visited both stores → Should he appear?
-# Asha visited only Store A → Should she appear?
-# Aman visited only Store B → Should he appear?
-
-store_a = {"Asha", "Rahul", "Pratyush", "Riya"}
-store_b = {"Rahul", "Riya", "Aman"}
-
-unique_customers = store_a.symmetric_difference(store_b)
-print(unique_customers)
-print(len(unique_customers))
+if name in premium_customers:
+    print("Premium customers")
+else:
+    print("Regular customers")
