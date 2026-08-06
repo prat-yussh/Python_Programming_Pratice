@@ -1,30 +1,26 @@
-# Q3: Safe Product Removal
+# Q4: Merge Visitor Sets
 
 # Do exactly this:
 
-# Remove "Keyboard" using discard().
-# Try to remove "Webcam" using discard().
-# Print the final set.
-# Print the total number of products.
-# New concept
+# Create a new set named all_visitors using union().
+# Print all_visitors.
+# Print the total number of unique visitors.
+# Expected result
+# {'V101', 'V102', 'V103', 'V104', 'V105'}
+# Total visitors: 5
 
-# discard() is safer than remove().
+# Use only:
 
-# products.remove("Webcam")   # ❌ Error if Webcam doesn't exist
-
-# products.discard("Webcam")  # ✅ No error, nothing happens
-
-# Use:
-
-# discard()
+# union()
 # len()
 
 # Do not use a loop.
 
-# This question teaches the difference between remove() and discard(), which is one of the most important set methods.
+# Hint: union() combines both sets and automatically removes duplicates.
 
-products = {"Mouse", "Keyboard", "Monitor"}
-products.discard("Keyboard")
-products.discard("Webcam")
-print(products)
-print(len(products))
+morning_visitors = {"V101", "V102", "V103"}
+evening_visitors = {"V103", "V104", "V105"}
+
+all_visitors = morning_visitors.union(evening_visitors)
+print(all_visitors)
+print(len(all_visitors))
