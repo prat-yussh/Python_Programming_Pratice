@@ -1,27 +1,28 @@
-# Q5: Common Customers
+# Q7: Customers Visiting Only One Store
 
 # Do exactly this:
 
-# Find the customers who visited both stores using intersection().
-# Store the result in common_customers.
-# Print common_customers.
-# Print the number of common customers.
+# Find customers who visited only one of the stores using symmetric_difference().
+# Store the result in unique_customers.
+# Print unique_customers.
+# Print the total number of unique customers.
 
 # Use only:
 
-# intersection()
+# symmetric_difference()
 # len()
 
 # Do not use a loop.
 
-# This introduces another important set operation:
+# 💡 Before coding, think:
 
-# union() → all unique elements
-# intersection() → only common elements
+# Rahul visited both stores → Should he appear?
+# Asha visited only Store A → Should she appear?
+# Aman visited only Store B → Should he appear?
 
 store_a = {"Asha", "Rahul", "Pratyush", "Riya"}
 store_b = {"Rahul", "Riya", "Aman"}
 
-common_customers = store_a.intersection(store_b)
-print(common_customers)
-print(len(common_customers))
+unique_customers = store_a.symmetric_difference(store_b)
+print(unique_customers)
+print(len(unique_customers))
