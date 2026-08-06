@@ -1,26 +1,27 @@
-# Q4: Merge Visitor Sets
+# Q5: Common Customers
 
 # Do exactly this:
 
-# Create a new set named all_visitors using union().
-# Print all_visitors.
-# Print the total number of unique visitors.
-# Expected result
-# {'V101', 'V102', 'V103', 'V104', 'V105'}
-# Total visitors: 5
+# Find the customers who visited both stores using intersection().
+# Store the result in common_customers.
+# Print common_customers.
+# Print the number of common customers.
 
 # Use only:
 
-# union()
+# intersection()
 # len()
 
 # Do not use a loop.
 
-# Hint: union() combines both sets and automatically removes duplicates.
+# This introduces another important set operation:
 
-morning_visitors = {"V101", "V102", "V103"}
-evening_visitors = {"V103", "V104", "V105"}
+# union() → all unique elements
+# intersection() → only common elements
 
-all_visitors = morning_visitors.union(evening_visitors)
-print(all_visitors)
-print(len(all_visitors))
+store_a = {"Asha", "Rahul", "Pratyush", "Riya"}
+store_b = {"Rahul", "Riya", "Aman"}
+
+common_customers = store_a.intersection(store_b)
+print(common_customers)
+print(len(common_customers))
