@@ -1,39 +1,54 @@
-# Dictionary Q3 (Combined)
+# Q4 (Combined + Loop)
+
+# Now let's combine dictionaries with loops.
+
 
 # Do all of these:
 
-# Remove "Monitor" using pop().
-# Store the removed value in a variable named removed_stock.
+# Create:
+# Use one loop with items() to:
+# Print each subject and its marks like:
+# Math : 85
+# Science : 92
+# Calculate the total marks manually.
+# Calculate the average after the loop.
+# Find how many subjects have marks 90 or above.
 # Print:
-# Removed stock: 5
-# Increase "Keyboard" stock by 5.
-# Add:
-# "Speaker": 10
-# Print the updated dictionary.
-# Print the total number of products.
+# Total:
+# Average:
+# Subjects with 90+:
+# Rules
+# Use one loop only.
+# Use items().
+# Do not use sum().
 
-# This single question practices:
+# This question combines:
 
-# pop()
-# Updating an existing value
-# Adding a new key
-# len()
+# Dictionaries
+# Loops
+# Manual calculations
+# Conditions
 
-# This is very close to how dictionaries are used in inventory systems.
+# This is the type of question you'll often see in interviews and coding tests.
 
-inventory = {
-    "Mouse": 15,
-    "Keyboard": 8,
-    "Monitor": 5,
-    "Webcam": 12
+marks = {
+    "Math": 85,
+    "Science": 92,
+    "English": 78,
+    "Computer": 95
 }
 
-removed_stock = inventory.pop("Monitor")
-print(removed_stock)
-print(inventory)
+total = 0
+count_90 = 0
 
-inventory["Keyboard"] += 5
-inventory["Speaker"] = 10
+for subject,value in marks.items():
+    print(subject,":",value)
+    total = total + value
 
-print(inventory)
-print(len(inventory))
+    if value > 90:
+        count_90 += 1  
+
+avg = total / len(marks)
+print(total)
+print(avg)
+print("Subjects with 90+:", count_90)
