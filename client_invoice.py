@@ -1,54 +1,63 @@
-# Q4 (Combined + Loop)
+# Q5 (Final Combined Challenge)
 
-# Now let's combine dictionaries with loops.
-
+# This question combines almost everything you've learned about dictionaries.
 
 # Do all of these:
-
-# Create:
-# Use one loop with items() to:
-# Print each subject and its marks like:
-# Math : 85
-# Science : 92
+# Use one loop with items().
+# Print each student's name and marks.
 # Calculate the total marks manually.
+# Count how many students passed (marks >= 40).
+# Count how many students failed (marks < 40).
+# Count how many students scored 90 or above.
 # Calculate the average after the loop.
-# Find how many subjects have marks 90 or above.
 # Print:
-# Total:
-# Average:
-# Subjects with 90+:
+# Total marks:
+# Average marks:
+# Passed students:
+# Failed students:
+# Students with 90+:
 # Rules
-# Use one loop only.
-# Use items().
-# Do not use sum().
+# ✅ Use one loop only.
+# ✅ Use items().
+# ✅ Do not use sum().
+# ✅ Do not use extra loops.
 
-# This question combines:
-
-# Dictionaries
-# Loops
-# Manual calculations
-# Conditions
-
-# This is the type of question you'll often see in interviews and coding tests.
-
-marks = {
-    "Math": 85,
-    "Science": 92,
-    "English": 78,
-    "Computer": 95
+# This is the kind of question that mixes almost every dictionary concept you've learned so far. If you solve this comfortably, the dictionary basics will be in very good shape.
+students = {
+    "Asha": 85,
+    "Rahul": 38,
+    "Pratyush": 91,
+    "Riya": 76,
+    "Aman": 95
 }
 
-total = 0
-count_90 = 0
+total_marks = 0
+passed = 0
+failed = 0
+count90 = 0
 
-for subject,value in marks.items():
-    print(subject,":",value)
-    total = total + value
+for name, marks in students.items():
+    print(name, ":", marks)
 
-    if value > 90:
-        count_90 += 1  
+    total_marks += marks
 
-avg = total / len(marks)
-print(total)
-print(avg)
-print("Subjects with 90+:", count_90)
+    # Pass or Fail
+    if marks >= 40:
+        passed += 1
+        print("Passed Student:", name, ":", marks)
+    else:
+        failed += 1
+        print("Failed Student:", name, ":", marks)
+
+    # Independent condition
+    if marks >= 90:
+        count90 += 1
+        print("Student with 90+:", name, ":", marks)
+
+avg = total_marks / len(students)
+
+print("\nTotal marks:", total_marks)
+print("Average marks:", avg)
+print("Passed students:", passed)
+print("Failed students:", failed)
+print("Students with 90+:", count90)
