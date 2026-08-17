@@ -1,60 +1,100 @@
-# Dictionary Q7 — Nested Dictionary + Loop
+# Dictionary Final Challenge
 
-# Now let's do one important nested-dictionary question and then move toward finishing dictionaries.
+# You have an online store:
 
-# Do all of these:
+# Do all of these using one loop:
 
-# Print Riya's salary.
-# Loop through the outer dictionary using items().
+# Print every product like:
 
-# For each employee, print:
+# P101 : Mouse : ₹500 : Stock 10
+# Count the number of available products (stock > 0).
+# Count the number of out-of-stock products (stock == 0).
+# Find the most expensive product manually.
+# Don't use max().
 
-# EMP101 : Asha : 45000
-# Count how many employees are in the "IT" department.
-# Find the highest salary manually.
+# Calculate the total inventory value.
 
-# Print:
+# Formula:
 
-# IT employees:
-# Highest salary:
+# price × stock
+
+# After the loop, print:
+
+# Available products:
+# Out of stock:
+# Most expensive product:
+# Highest price:
+# Total inventory value:
 # Rules
-# Use one loop.
-# Use items().
-# Do not use max().
-# Don't create another loop.
+# ✅ One loop only
+# ✅ Use items()
+# ❌ No max()
+# ❌ No sum()
+# ❌ Don't create another loop
+# Think about the variables you'll need
 
-employees = {
-    "EMP101": {
-        "name": "Asha",
-        "department": "IT",
-        "salary": 45000
+# You'll probably need something like:
+
+# available = 0
+# out_of_stock = 0
+# highest_price = 0
+# highest_product = ""
+# total_value = 0
+
+# But you decide the exact variables and logic.
+
+# This is our last dictionary question. After you solve it, dictionary chapter = DONE, and we'll move immediately to the next Python topic.
+
+products = {
+    "P101": {
+        "name": "Mouse",
+        "category": "Electronics",
+        "price": 500,
+        "stock": 10
     },
-    "EMP102": {
-        "name": "Rahul",
-        "department": "HR",
-        "salary": 38000
+    "P102": {
+        "name": "Keyboard",
+        "category": "Electronics",
+        "price": 1200,
+        "stock": 0
     },
-    "EMP103": {
-        "name": "Riya",
-        "department": "IT",
-        "salary": 52000
+    "P103": {
+        "name": "Notebook",
+        "category": "Stationery",
+        "price": 80,
+        "stock": 25
+    },
+    "P104": {
+        "name": "Monitor",
+        "category": "Electronics",
+        "price": 8000,
+        "stock": 5
     }
 }
 
-it_dept=0
-highest_salary = 0
-highest_salary_emp_id = 0
+available_stock = 0
+unavailable_stock = 0
+expensive_product = 0
+expensive_product_id = 0
+total_value = 0
+highest_price = 0
 
+for products_id,details in products.items():
+    print(products_id,details["name"],details["category"],details["price"],details["stock"],sep=" : ")
+    if details["stock"] > 0:
+        available_stock += 1
 
-# print(employees)
-for employe_id,details in employees.items():
-    print(employe_id,details["name"],details["salary"],sep=" : ")
-    if details["department"] == "IT":
-        it_dept += 1
-        print("IT employees:",details["name"])
-    if details["salary"] > highest_salary:
-        highest_salary_emp_id = employe_id
-        highest_salary = details["salary"]
-        
-print("Highest salary:",highest_salary)
+    if details["stock"] == 0:
+        unavailable_stock += 1
+
+    if details["price"] > highest_price:
+        expensive_product = details["name"]
+        highest_price = details["price"]
+
+    total_value = details["stock"] * details["price"] + total_value
     
+print("Available products:",available_stock)
+print("Out of stock:",unavailable_stock)
+print("Highest price:",highest_price)
+print("Most expensive product:",expensive_product)
+print("Total inventory value:",total_value)
