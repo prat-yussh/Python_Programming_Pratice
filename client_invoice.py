@@ -1,44 +1,54 @@
-# Function Q7 — Multiple Return Values
+# Function Q8 — *args
 
-# Create a function called:
+# Now we're moving to a new concept.
 
-# calculate_numbers(a, b)
+# Create:
 
-# It should calculate and return all three:
+# calculate_total(*prices)
 
-# Sum → a + b
-# Difference → a - b
-# Product → a * b
+# The function should accept any number of prices and return their total.
 
-# Call it with:
+# For example:
 
-# calculate_numbers(20, 5)
+# calculate_total(100, 200, 300)
 
-# Store the three returned values in:
+# should return:
 
-# total, difference, product
+# 600
 
-# Then print:
+# And:
 
-# Sum: 25
-# Difference: 15
-# Product: 100
-# Hint
+# calculate_total(50, 100, 150, 200)
 
-# You already accidentally learned this in your create_order() question:
+# should return:
 
-# return value1, value2
+# 500
+# Requirements
 
-# This time you'll return three values.
+# Inside the function:
 
-# Give it a shot.
+# Start total = 0
+# Loop through prices
+# Add each price to total
+# Return total
 
-def calculate_numbers(a, b):
-    total = a + b
-    diffrence = a - b
-    product = a * b
+# Then test:
 
-    return total,diffrence,product
+# print(calculate_total(100, 200, 300))
+# print(calculate_total(50, 100, 150, 200))
+# New concept
+# def calculate_total(*prices):
 
-total , diff , prod = calculate_numbers(20, 5)
-print("Sum:",total,"\nDiffrence:",diff,"\nProduct:",prod)
+# *prices means the function can receive any number of positional arguments.
+
+# Don't worry about **kwargs yet. One new concept at a time.
+
+def calculate_total(*prices):
+    start_total = 0
+    for price in prices:
+        start_total = start_total + price
+
+    return start_total
+
+print(calculate_total(100, 200, 300))
+print(calculate_total(50, 100, 150, 200))
