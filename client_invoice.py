@@ -1,69 +1,69 @@
-# Function Q9 — *args + Condition
+# Function Q10 — **kwargs
 
-# Let's make this one more practical.
+# New concept, but simpler than it looks.
 
-# Create a function:
+# Suppose we call:
 
-# calculate_expensive_total(*prices)
+# create_profile(
+#     name="Pratyush",
+#     branch="CSE",
+#     semester=7
+# )
 
-# It should:
+# Here we're passing named arguments.
 
-# Accept any number of prices.
-# Look at each price.
-# Add only prices greater than or equal to ₹1000.
-# Return the total.
+# Create:
 
-# Example:
+# def create_profile(**details):
 
-# calculate_expensive_total(500, 1200, 800, 2000)
+# Inside the function:
 
-# Expected:
+# Print the entire details.
 
-# 3200
+# Print the student's name using:
 
-# Because:
+# details["name"]
 
-# 500  ❌
-# 1200 ✅
-# 800  ❌
-# 2000 ✅
+# Print the branch using:
 
+# details["branch"]
 
-# 1200 + 2000 = 3200
+# Then call:
 
-# Test it with:
+# create_profile(
+#     name="Pratyush",
+#     branch="CSE",
+#     semester=7
+# )
+# What **kwargs does
 
-# print(calculate_expensive_total(500, 1200, 800, 2000))
-# print(calculate_expensive_total(1500, 700, 2500))
-
-# Expected:
-
-# 3200
-# 4000
-# Rules
-
-# Use:
+# Just like:
 
 # *args
-# for
-# if
-# return
 
-# No sum().
+# collects multiple positional arguments,
 
-# This is basically the *args question you just learned + the filtering logic you've already practiced.
+# **kwargs
 
-def calculate_expensive_total(*prices):
-    total = 0
-    for price in prices:
-        if price >= 1000:
-            total = total + price
-        else:
-            pass
+# collects multiple keyword/named arguments into a dictionary.
 
-    return total
+# So inside the function, details will basically be:
+
+# {
+#     "name": "Pratyush",
+#     "branch": "CSE",
+#     "semester": 7
+# }
+
+# Try it. No need for a loop yet.
+
+def create_profile(**details):
+    print(details["name"])
+    print(details["branch"])
 
 
-
-print(calculate_expensive_total(500, 1200, 800, 2000))
-print(calculate_expensive_total(1500, 700, 2500))
+create_profile(
+    name="Pratyush",
+    branch="CSE",
+    semester=7
+)
