@@ -1,38 +1,48 @@
-# Function Q2 — Multiple Calculations + Return
+# Function Q4 — Keyword Arguments + Multiple Parameters
 
-# Create a function called calculate_bill that takes:
+# Create a function called create_order with these parameters:
 
-# price
+# product
 # quantity
-# discount
+# price
 
 # The function should:
 
-# Calculate the original bill:
-# price × quantity
-# Calculate the discount amount:
-# bill × discount / 100
-# Calculate the final bill:
-# bill - discount_amount
-# Return the final bill.
+# Calculate the total:
+# quantity × price
+# Return the total.
 
-# Then call:
+# Then call the function using keyword arguments, not positional arguments.
 
-# calculate_bill(1000, 3, 10)
+# Use:
 
-# Store the result in final_bill and print it.
+# product = "Keyboard"
+# quantity = 2
+# price = 1200
 
-# Expected result:
+# Your call should look like the idea below:
 
-# Final bill: 2700.0
+# create_order(
+#     product="Keyboard",
+#     quantity=2,
+#     price=1200
+# )
 
-# Don't use input() or loops. Just focus on parameters, calculations, and return.
+# Store the returned value in total and print:
 
-def calculate_bill(price,quantity,discount):
-    original_bill = price * quantity
-    discount_amount = original_bill * discount / 100
-    final_bill = original_bill - discount_amount
-    return final_bill
+# Product: Keyboard
+# Total: 2400
 
-final_bill = calculate_bill(1000,3,10)
-print("Final bill:",final_bill)
+# Don't use input() or loops.
+
+def create_order(product,quantity,price):
+    total_price = price * quantity
+    return product,total_price
+
+product, total = create_order(
+    product="Keyboard",
+    quantity=2,
+    price=1200
+)
+
+print("prodct:",product,"\nTotal:",total)
