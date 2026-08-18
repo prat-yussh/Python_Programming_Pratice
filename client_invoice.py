@@ -1,69 +1,48 @@
-# Function Q10 — **kwargs
+# Function chapter: one final challenge 🔥
 
-# New concept, but simpler than it looks.
-
-# Suppose we call:
-
-# create_profile(
-#     name="Pratyush",
-#     branch="CSE",
-#     semester=7
-# )
-
-# Here we're passing named arguments.
+# This will combine almost everything we've learned.
 
 # Create:
 
-# def create_profile(**details):
+# generate_bill(customer, *prices, discount=10)
 
-# Inside the function:
+# The function should:
 
-# Print the entire details.
+# Accept the customer's name.
+# Accept any number of prices using *prices.
+# Calculate the total of all prices.
+# Apply the discount.
+# Return customer name + final bill.
 
-# Print the student's name using:
+# Call:
 
-# details["name"]
+# generate_bill("Pratyush", 500, 1200, 800, discount=10)
 
-# Print the branch using:
+# Expected:
 
-# details["branch"]
+# Customer: Pratyush
+# Final bill: 2250.0
+# Why 2250?
+# 500 + 1200 + 800 = 2500
+# 10% discount = 250
+# Final = 2250
 
-# Then call:
+# Important: Don't use sum().
 
-# create_profile(
-#     name="Pratyush",
-#     branch="CSE",
-#     semester=7
-# )
-# What **kwargs does
+# This is the final function challenge. After this, Functions = DONE and we move to the next Python topic. 🚀
 
-# Just like:
+def generate_bill(customer, *prices, discount=10):
+    total = 0
+    for price in prices:
+        total += price
 
-# *args
+    discount = total * discount / 100
+    final_price = total - discount
+    return customer, final_price
 
-# collects multiple positional arguments,
-
-# **kwargs
-
-# collects multiple keyword/named arguments into a dictionary.
-
-# So inside the function, details will basically be:
-
-# {
-#     "name": "Pratyush",
-#     "branch": "CSE",
-#     "semester": 7
-# }
-
-# Try it. No need for a loop yet.
-
-def create_profile(**details):
-    print(details["name"])
-    print(details["branch"])
-
-
-create_profile(
-    name="Pratyush",
-    branch="CSE",
-    semester=7
+customer, final_price = generate_bill(
+    "Pratyush", 500, 1200, 800, discount=10
 )
+
+print("Customer:", customer)
+print("Final bill:", final_price)
