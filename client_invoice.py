@@ -1,54 +1,69 @@
-# Function Q8 — *args
+# Function Q9 — *args + Condition
 
-# Now we're moving to a new concept.
+# Let's make this one more practical.
 
-# Create:
+# Create a function:
 
-# calculate_total(*prices)
+# calculate_expensive_total(*prices)
 
-# The function should accept any number of prices and return their total.
+# It should:
 
-# For example:
+# Accept any number of prices.
+# Look at each price.
+# Add only prices greater than or equal to ₹1000.
+# Return the total.
 
-# calculate_total(100, 200, 300)
+# Example:
 
-# should return:
+# calculate_expensive_total(500, 1200, 800, 2000)
 
-# 600
+# Expected:
 
-# And:
+# 3200
 
-# calculate_total(50, 100, 150, 200)
+# Because:
 
-# should return:
+# 500  ❌
+# 1200 ✅
+# 800  ❌
+# 2000 ✅
 
-# 500
-# Requirements
 
-# Inside the function:
+# 1200 + 2000 = 3200
 
-# Start total = 0
-# Loop through prices
-# Add each price to total
-# Return total
+# Test it with:
 
-# Then test:
+# print(calculate_expensive_total(500, 1200, 800, 2000))
+# print(calculate_expensive_total(1500, 700, 2500))
 
-# print(calculate_total(100, 200, 300))
-# print(calculate_total(50, 100, 150, 200))
-# New concept
-# def calculate_total(*prices):
+# Expected:
 
-# *prices means the function can receive any number of positional arguments.
+# 3200
+# 4000
+# Rules
 
-# Don't worry about **kwargs yet. One new concept at a time.
+# Use:
 
-def calculate_total(*prices):
-    start_total = 0
+# *args
+# for
+# if
+# return
+
+# No sum().
+
+# This is basically the *args question you just learned + the filtering logic you've already practiced.
+
+def calculate_expensive_total(*prices):
+    total = 0
     for price in prices:
-        start_total = start_total + price
+        if price >= 1000:
+            total = total + price
+        else:
+            pass
 
-    return start_total
+    return total
 
-print(calculate_total(100, 200, 300))
-print(calculate_total(50, 100, 150, 200))
+
+
+print(calculate_expensive_total(500, 1200, 800, 2000))
+print(calculate_expensive_total(1500, 700, 2500))
