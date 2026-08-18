@@ -1,32 +1,38 @@
-# Function Q1 — Basic Function + Parameter + Return
+# Function Q2 — Multiple Calculations + Return
 
-# Write a function called calculate_total that:
+# Create a function called calculate_bill that takes:
 
-# Takes two parameters:
 # price
 # quantity
-# Calculates:
+# discount
+
+# The function should:
+
+# Calculate the original bill:
 # price × quantity
-# Returns the total.
+# Calculate the discount amount:
+# bill × discount / 100
+# Calculate the final bill:
+# bill - discount_amount
+# Return the final bill.
 
-# Then:
+# Then call:
 
-# Call the function with 500 and 3.
-# Store the returned result in a variable called total.
-# Print:
-# Total price: 1500
-# Example idea
+# calculate_bill(1000, 3, 10)
 
-# You'll need:
+# Store the result in final_bill and print it.
 
-# def function_name(...):
-#     ...
-#     return ...
+# Expected result:
 
-# Don't worry about formatting the output exactly yet. Focus on getting the function + parameters + return + function call correct.
+# Final bill: 2700.0
 
-def calculate_total(price,quantity):
-    return price * quantity
+# Don't use input() or loops. Just focus on parameters, calculations, and return.
 
-total = calculate_total(500,3)
-print("Total price:",total)
+def calculate_bill(price,quantity,discount):
+    original_bill = price * quantity
+    discount_amount = original_bill * discount / 100
+    final_bill = original_bill - discount_amount
+    return final_bill
+
+final_bill = calculate_bill(1000,3,10)
+print("Final bill:",final_bill)
