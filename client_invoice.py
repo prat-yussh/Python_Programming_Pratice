@@ -1,45 +1,44 @@
-# Task
+# Function Q7 — Multiple Return Values
 
-# Create:
+# Create a function called:
 
-# calculate_final_price(price, discount=10)
+# calculate_numbers(a, b)
 
-# Rules:
+# It should calculate and return all three:
 
-# If price >= 1000 → apply the discount.
-# If price < 1000 → no discount.
-# Return the final price.
+# Sum → a + b
+# Difference → a - b
+# Product → a * b
 
-# Test these:
+# Call it with:
 
-# calculate_final_price(2000)
-# calculate_final_price(2000, 20)
-# calculate_final_price(800)
+# calculate_numbers(20, 5)
 
-# Expected:
+# Store the three returned values in:
 
-# 1800.0
-# 1600.0
-# 800
-# Concepts being tested
-# def
-# parameters
-# default parameter
-# if/else
-# calculation
-# return
-# function calls
+# total, difference, product
 
-# Give it a try yourself. Don't overthink it—you've already used every piece of this.
+# Then print:
 
-def calculate_final_price(price, discount=10):
-    if price >= 1000:
-        discount_amount = price * discount / 100
-        total_amount = price - discount_amount
-        return total_amount
-    else:
-        return price
+# Sum: 25
+# Difference: 15
+# Product: 100
+# Hint
 
-print(calculate_final_price(2000))
-print(calculate_final_price(2000, 20))
-print(calculate_final_price(800))
+# You already accidentally learned this in your create_order() question:
+
+# return value1, value2
+
+# This time you'll return three values.
+
+# Give it a shot.
+
+def calculate_numbers(a, b):
+    total = a + b
+    diffrence = a - b
+    product = a * b
+
+    return total,diffrence,product
+
+total , diff , prod = calculate_numbers(20, 5)
+print("Sum:",total,"\nDiffrence:",diff,"\nProduct:",prod)
