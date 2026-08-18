@@ -1,48 +1,35 @@
-# Function Q4 — Keyword Arguments + Multiple Parameters
+# Function Q5 — Function + Condition
 
-# Create a function called create_order with these parameters:
+# Now let's combine functions with the if logic you've been practicing.
 
-# product
-# quantity
-# price
+# Create:
+
+# check_discount(price)
 
 # The function should:
 
-# Calculate the total:
-# quantity × price
-# Return the total.
+# If price >= 1000, return "10% discount available"
+# Otherwise, return "No discount available"
 
-# Then call the function using keyword arguments, not positional arguments.
+# Then call it with:
 
-# Use:
+# 1200
 
-# product = "Keyboard"
-# quantity = 2
-# price = 1200
+# and:
 
-# Your call should look like the idea below:
+# 800
 
-# create_order(
-#     product="Keyboard",
-#     quantity=2,
-#     price=1200
-# )
+# Expected:
 
-# Store the returned value in total and print:
+# 10% discount available
+# No discount available
 
-# Product: Keyboard
-# Total: 2400
+# Use return, not print() inside the function.
+def check_discount(price):
+    if price >= 1000:
+        return "10 \% discount available"
+    else:
+        return "No discount available"
 
-# Don't use input() or loops.
-
-def create_order(product,quantity,price):
-    total_price = price * quantity
-    return product,total_price
-
-product, total = create_order(
-    product="Keyboard",
-    quantity=2,
-    price=1200
-)
-
-print("prodct:",product,"\nTotal:",total)
+result = check_discount(1000)
+print(result)
