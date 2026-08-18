@@ -1,35 +1,45 @@
-# Function Q5 — Function + Condition
-
-# Now let's combine functions with the if logic you've been practicing.
+# Task
 
 # Create:
 
-# check_discount(price)
+# calculate_final_price(price, discount=10)
 
-# The function should:
+# Rules:
 
-# If price >= 1000, return "10% discount available"
-# Otherwise, return "No discount available"
+# If price >= 1000 → apply the discount.
+# If price < 1000 → no discount.
+# Return the final price.
 
-# Then call it with:
+# Test these:
 
-# 1200
-
-# and:
-
-# 800
+# calculate_final_price(2000)
+# calculate_final_price(2000, 20)
+# calculate_final_price(800)
 
 # Expected:
 
-# 10% discount available
-# No discount available
+# 1800.0
+# 1600.0
+# 800
+# Concepts being tested
+# def
+# parameters
+# default parameter
+# if/else
+# calculation
+# return
+# function calls
 
-# Use return, not print() inside the function.
-def check_discount(price):
+# Give it a try yourself. Don't overthink it—you've already used every piece of this.
+
+def calculate_final_price(price, discount=10):
     if price >= 1000:
-        return "10 \% discount available"
+        discount_amount = price * discount / 100
+        total_amount = price - discount_amount
+        return total_amount
     else:
-        return "No discount available"
+        return price
 
-result = check_discount(1000)
-print(result)
+print(calculate_final_price(2000))
+print(calculate_final_price(2000, 20))
+print(calculate_final_price(800))
