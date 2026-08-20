@@ -1,34 +1,44 @@
-# Q1 — import
+# Modules Q2 — from ... import ...
 
-# You already know Python's built-in math module.
+# Instead of:
+
+# import math
+
+
+# math.sqrt(25)
+
+# Python also lets you import specific functions:
+
+# from math import sqrt
+
+# Then you can directly write:
+
+# sqrt(25)
+# Your task
 
 # Write a program that:
 
-# Imports math.
+# Imports sqrt and ceil from math.
 
-# Takes the number:
+# Use:
 
-# number = 25
-# Finds its square root using math.sqrt().
-# Finds 5! using math.factorial().
-# Prints both results.
+# Find the square root.
+# Round the number up using ceil().
+# Print both.
 
-# Expected:
+# Expected roughly:
 
-# Square root: 5.0
-# Factorial: 120
-# Don't use:
-# 5 ** 0.5
+# Square root: 2.701...
+# Rounded up: 8
 
-# Use the module:
+# Use:
 
-# math.sqrt()
-# math.factorial()
+# from math import ...
 
-# Try it yourself.
+# instead of import math.
 
-import math
+from math import sqrt,ceil
 
-number = 5
-print(math.sqrt(number))
-print(math.factorial(number))
+number = 7.3
+print(sqrt(number))
+print(ceil(number))
