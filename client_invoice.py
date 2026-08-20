@@ -1,44 +1,41 @@
-# Modules Q2 — from ... import ...
+# Modules Q3 — Alias with as
 
-# Instead of:
+# Sometimes module/function names are long, so Python lets us give them a shorter name.
 
-# import math
+# For example:
 
+# import math as m
+
+# Then:
+
+# m.sqrt(25)
+
+# instead of:
 
 # math.sqrt(25)
-
-# Python also lets you import specific functions:
-
-# from math import sqrt
-
-# Then you can directly write:
-
-# sqrt(25)
 # Your task
 
-# Write a program that:
+# Use the random module.
 
-# Imports sqrt and ceil from math.
+# Import random as r.
 
-# Use:
+# Generate a random integer between 1 and 100 using:
 
-# Find the square root.
-# Round the number up using ceil().
-# Print both.
+# r.randint(1, 100)
+# Store it in number.
 
-# Expected roughly:
+# Print:
 
-# Square root: 2.701...
-# Rounded up: 8
+# Random number: <number>
+# Hint
+# import random as r
 
-# Use:
+# Then use:
 
-# from math import ...
+# r.randint(...)
 
-# instead of import math.
+# That's it—one small question, then we'll move to creating your own module, which is the important part.
 
-from math import sqrt,ceil
+import random as r
 
-number = 7.3
-print(sqrt(number))
-print(ceil(number))
+print(r.randint(1,100))
