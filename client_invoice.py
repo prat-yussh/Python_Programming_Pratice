@@ -1,48 +1,34 @@
-# Function chapter: one final challenge 🔥
+# Q1 — import
 
-# This will combine almost everything we've learned.
+# You already know Python's built-in math module.
 
-# Create:
+# Write a program that:
 
-# generate_bill(customer, *prices, discount=10)
+# Imports math.
 
-# The function should:
+# Takes the number:
 
-# Accept the customer's name.
-# Accept any number of prices using *prices.
-# Calculate the total of all prices.
-# Apply the discount.
-# Return customer name + final bill.
-
-# Call:
-
-# generate_bill("Pratyush", 500, 1200, 800, discount=10)
+# number = 25
+# Finds its square root using math.sqrt().
+# Finds 5! using math.factorial().
+# Prints both results.
 
 # Expected:
 
-# Customer: Pratyush
-# Final bill: 2250.0
-# Why 2250?
-# 500 + 1200 + 800 = 2500
-# 10% discount = 250
-# Final = 2250
+# Square root: 5.0
+# Factorial: 120
+# Don't use:
+# 5 ** 0.5
 
-# Important: Don't use sum().
+# Use the module:
 
-# This is the final function challenge. After this, Functions = DONE and we move to the next Python topic. 🚀
+# math.sqrt()
+# math.factorial()
 
-def generate_bill(customer, *prices, discount=10):
-    total = 0
-    for price in prices:
-        total += price
+# Try it yourself.
 
-    discount = total * discount / 100
-    final_price = total - discount
-    return customer, final_price
+import math
 
-customer, final_price = generate_bill(
-    "Pratyush", 500, 1200, 800, discount=10
-)
-
-print("Customer:", customer)
-print("Final bill:", final_price)
+number = 5
+print(math.sqrt(number))
+print(math.factorial(number))
