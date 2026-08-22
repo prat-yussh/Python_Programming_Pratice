@@ -40,7 +40,7 @@
 
 # Create the two files and try it.
 
-import calculator
+from calculator import add,multiply
 
-print("Addition:",calculator.add(10, 5))
-print("Multilpicartion:",calculator.multiply(10, 5))
+print("Addition:",add(10, 5))
+print("Multilpicartion:",multiply(10, 5))
